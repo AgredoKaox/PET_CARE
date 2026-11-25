@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- PetCare — Solicitud para ser veterinario | Versión 1.0 -->
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solicitud para ser veterinario — PetCare</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../assets/js/components/menu.js" defer></script>
+  <script src="../assets/js/components/tabs.js" defer></script>
+  <script src="../assets/js/components/modal.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="dashboard">
+    <aside class="sidebar" id="sidebar">
+  <a class="sidebar__brand" href="../index.html">PetCare</a>
+  <span class="sidebar__role-badge">Due?o de mascota</span>
+  <nav class="sidebar__nav" aria-label="Navegaci?n principal">
+    <ul class="sidebar__list">
+      <li><a class="sidebar__link" href="dueno-dashboard.html"><span class="sidebar__icon" aria-hidden="true"></span>Dashboard</a></li>
+      <li><a class="sidebar__link" href="dueno-mascotas.html"><span class="sidebar__icon" aria-hidden="true"></span>Mis mascotas</a></li>
+      <li><a class="sidebar__link" href="dueno-calendario.html"><span class="sidebar__icon" aria-hidden="true"></span>Calendario de citas</a></li>
+      <li><a class="sidebar__link" href="dueno-configuracion.html"><span class="sidebar__icon" aria-hidden="true"></span>Configuraci?n</a></li>
+      <li><a class="sidebar__link" href="dueno-vacunas.html"><span class="sidebar__icon" aria-hidden="true"></span>Vacunas</a></li>
+      <li><a class="sidebar__link" href="dueno-tratamientos.html"><span class="sidebar__icon" aria-hidden="true"></span>Tratamientos</a></li>
+      <li><a class="sidebar__link" href="dueno-notas.html"><span class="sidebar__icon" aria-hidden="true"></span>Notas y observaciones</a></li>
+      <li><a class="sidebar__link" href="dueno-alertas.html"><span class="sidebar__icon" aria-hidden="true"></span>Notificaciones</a></li>
+      <li><a class="sidebar__link sidebar__link--active" href="dueno-solicitud-vet.html" aria-current="page"><span class="sidebar__icon" aria-hidden="true"></span>Solicitud para ser veterinario</a></li>
+    </ul>
+  </nav>
+  <div class="sidebar__footer">
+    <a class="button button--accent-teal" href="dueno-solicitud-vet.html">Solicitar ser veterinario</a>
+    <a class="button button--danger-soft" href="login.html">Cerrar sesi?n</a>
+  </div>
+</aside>
+    <div class="dashboard__body">
+      <header class="header">
+        <button class="header__menu-toggle button button--icon" type="button" aria-controls="sidebar" aria-expanded="false">Menú</button>
+        <nav class="header__breadcrumb" aria-label="Ubicación"><span class="header__crumb">Plataforma</span><span aria-hidden="true">&nbsp;/&nbsp;</span><span class="header__crumb header__crumb--current">Solicitud veterinaria</span></nav>
+        <div class="header__role-switch" role="group" aria-label="Cambiar rol"><button class="header__role header__role--active" type="button" aria-pressed="true">Dueño</button><button class="header__role" type="button" aria-pressed="false">Veterinario</button><button class="header__role" type="button" aria-pressed="false">Admin</button></div>
+        <div class="header__user"><span class="header__avatar" aria-hidden="true">JA</span><span class="header__user-name">Juan Agredo</span></div>
+      </header>
+      <main id="contenido" class="dashboard__content">
+        <section class="hero" aria-labelledby="titulo-solicitud"><div class="hero__content"><h1 id="titulo-solicitud" class="hero__title">Solicitud para ser veterinario</h1><p class="hero__subtitle">Completa la información profesional requerida.</p></div></section>
+        <article class="card card--panel">
+          <ol class="steps" aria-label="Progreso de la solicitud">
+            <li class="steps__item steps__item--done"><span class="steps__marker">1</span><span class="steps__label">Datos personales</span></li>
+            <li class="steps__item steps__item--active" aria-current="step"><span class="steps__marker">2</span><span class="steps__label">Formación</span></li>
+            <li class="steps__item"><span class="steps__marker">3</span><span class="steps__label">Experiencia</span></li>
+            <li class="steps__item"><span class="steps__marker">4</span><span class="steps__label">Confirmación</span></li>
+          </ol>
+          <header class="card__header"><h2 class="card__title">Información de formación</h2></header>
+          <form class="auth-form__form" action="#">
+            <div class="auth-form__field"><label class="auth-form__label" for="universidad">Universidad</label><input class="auth-form__input" id="universidad" name="universidad" type="text" autocomplete="organization"></div>
+            <div class="auth-form__field"><label class="auth-form__label" for="titulo">Título profesional</label><input class="auth-form__input" id="titulo" name="titulo" type="text" autocomplete="off"></div>
+            <div class="auth-form__field"><label class="auth-form__label" for="registro">Registro profesional</label><input class="auth-form__input" id="registro" name="registro" type="text" autocomplete="off"></div>
+            <div class="card__actions"><button class="button button--secondary" type="button">Atrás</button><button class="button button--primary" type="submit">Continuar</button></div>
+          </form>
+        </article>
+      </main>
+      <footer class="footer"><nav class="footer__links" aria-label="Enlaces legales y de soporte"><a class="footer__link" href="#">Política de privacidad</a><a class="footer__link" href="#">Términos de servicio</a><a class="footer__link" href="#">Soporte</a></nav></footer>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- PetCare — Prototipo | Versión 1.0 -->
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PetCare — Prototipo</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="assets/js/components/menu.js" defer></script>
+  <script src="assets/js/components/tabs.js" defer></script>
+  <script src="assets/js/components/modal.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="header">
+    <a class="header__crumb header__crumb--current" href="index.html">PetCare</a>
+    <nav class="header__breadcrumb" aria-label="Navegación principal">
+      <a class="header__crumb" href="pages/login.html">Iniciar sesión</a>
+      <a class="header__crumb" href="pages/registro.html">Crear cuenta</a>
+    </nav>
+  </header>
+  <main id="contenido" class="dashboard__content">
+    <section class="hero" aria-labelledby="titulo-inicio">
+      <div class="hero__content">
+        <h1 id="titulo-inicio" class="hero__title">Prototipo PetCare</h1>
+        <p class="hero__subtitle">Explora las pantallas del prototipo por rol. No se requiere iniciar sesión.</p>
+      </div>
+    </section>
+    <section class="dashboard__sections" aria-label="Pantallas disponibles">
+      <article class="card card--panel">
+        <h2 class="card__title">Dueño de mascota</h2>
+        <nav aria-label="Pantallas para dueños">
+          <ul class="sidebar__list">
+            <li><a class="sidebar__link" href="pages/dueno-dashboard.html">Dashboard</a></li>
+            <li><a class="sidebar__link" href="pages/dueno-mascotas.html">Mis mascotas</a></li>
+            <li><a class="sidebar__link" href="pages/dueno-calendario.html">Calendario de citas</a></li>
+            <li><a class="sidebar__link" href="pages/dueno-configuracion.html">Configuración</a></li>
+            <li><a class="sidebar__link" href="pages/dueno-vacunas.html">Vacunas</a></li>
+            <li><a class="sidebar__link" href="pages/dueno-tratamientos.html">Tratamientos</a></li>
+            <li><a class="sidebar__link" href="pages/dueno-notas.html">Notas y observaciones</a></li>
+            <li><a class="sidebar__link" href="pages/dueno-alertas.html">Notificaciones</a></li>
+            <li><a class="sidebar__link" href="pages/dueno-solicitud-vet.html">Solicitud para ser veterinario</a></li>
+          </ul>
+        </nav>
+      </article>
+      <article class="card card--panel">
+        <h2 class="card__title">Acceso</h2>
+        <nav aria-label="Pantallas de acceso">
+          <ul class="sidebar__list">
+            <li><a class="sidebar__link" href="pages/login.html">Iniciar sesión</a></li>
+            <li><a class="sidebar__link" href="pages/registro.html">Crear cuenta</a></li>
+          </ul>
+        </nav>
+      </article>
+      <article class="card card--panel">
+        <h2 class="card__title">Veterinario</h2>
+        <nav aria-label="Pantallas para veterinarios">
+          <ul class="sidebar__list">
+            <li><a class="sidebar__link" href="pages/vet-dashboard.html">Panel veterinario</a></li>
+            <li><a class="sidebar__link" href="pages/vet-historial.html">Historial clínico</a></li>
+          </ul>
+        </nav>
+      </article>
+      <article class="card card--panel">
+        <h2 class="card__title">Administrador</h2>
+        <nav aria-label="Pantallas para administradores">
+          <ul class="sidebar__list">
+            <li><a class="sidebar__link" href="pages/admin-dashboard.html">Panel de administración</a></li>
+            <li><a class="sidebar__link" href="pages/admin-clinicas.html">Clínicas</a></li>
+            <li><a class="sidebar__link" href="pages/admin-medicamentos.html">Medicamentos</a></li>
+            <li><a class="sidebar__link" href="pages/admin-especies.html">Especies y razas</a></li>
+          </ul>
+        </nav>
+      </article>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>PetCare — Prototipo estático</p>
+  </footer>
+</body>
+</html>

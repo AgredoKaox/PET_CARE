@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- PetCare — Crear cuenta | Versión 1.0 -->
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crear cuenta — PetCare</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../assets/js/components/menu.js" defer></script>
+  <script src="../assets/js/components/tabs.js" defer></script>
+  <script src="../assets/js/components/modal.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <main id="contenido" class="hero hero--auth">
+    <section class="auth-form" aria-labelledby="titulo-registro">
+      <a class="auth-form__brand" href="../index.html">PetCare</a>
+      <h1 id="titulo-registro" class="auth-form__title">Crear cuenta</h1>
+      <p class="auth-form__subtitle">Registra tus datos para comenzar.</p>
+
+      <nav class="auth-form__tabs" aria-label="Acceso">
+        <a class="auth-form__tab" href="login.html">Iniciar sesión</a>
+        <a class="auth-form__tab auth-form__tab--active" href="registro.html" aria-current="page">Crear cuenta</a>
+      </nav>
+
+      <form class="auth-form__form" action="#">
+        <div class="auth-form__field">
+          <label class="auth-form__label" for="nombre">Nombre completo</label>
+          <input class="auth-form__input" id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre">
+        </div>
+        <div class="auth-form__field">
+          <label class="auth-form__label" for="correo">Correo electrónico</label>
+          <input class="auth-form__input" id="correo" name="correo" type="email" autocomplete="email" placeholder="correo@ejemplo.com">
+        </div>
+        <div class="auth-form__field">
+          <label class="auth-form__label" for="contrasena">Contraseña</label>
+          <input class="auth-form__input" id="contrasena" name="contrasena" type="password" autocomplete="new-password">
+          <span class="auth-form__hint">Usa una contraseña segura.</span>
+        </div>
+        <label class="auth-form__checkbox">
+          <input name="terminos" type="checkbox">
+          <span>Acepto los términos de servicio y la política de privacidad.</span>
+        </label>
+        <button class="button button--primary button--lg" type="submit">Crear cuenta</button>
+      </form>
+
+      <div class="auth-form__footer">
+        <span>¿Ya tienes una cuenta? <a class="auth-form__link" href="login.html">Iniciar sesión</a></span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

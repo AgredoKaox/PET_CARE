@@ -1,0 +1,116 @@
+:root {
+  /* Colores — marca y acción principal */
+  --color-primary-500: #4caf50;
+  /* [SUPUESTO] Verde oscuro para mantener contraste con texto y fondos claros. */
+  --color-primary-700: #2e7d32;
+  --color-primary-50: #e8f5e9;
+  /* [SUPUESTO] Borde para estados seleccionados con la paleta principal. */
+  --color-primary-100: #c8e6c9;
+
+  /* Colores — neutros */
+  --color-bg: #f5f6f7;
+  --color-surface: #ffffff;
+  /* [SUPUESTO] Borde neutro para tarjetas e inputs. */
+  --color-border: #e3e6ea;
+  --color-text: #1f2933;
+  /* [SUPUESTO] Texto secundario con contraste suficiente sobre superficies claras. */
+  --color-text-muted: #5f6b7a;
+  /* [SUPUESTO] Estado deshabilitado; no debe usarse para texto informativo. */
+  --color-text-disabled: #9aa4b2;
+
+  /* Colores — estados y alertas */
+  --color-info: #1e88e5;
+  /* [SUPUESTO] Fondo claro para mensajes informativos. */
+  --color-info-50: #e3f2fd;
+  --color-warning: #f59e0b;
+  /* [SUPUESTO] Texto oscuro para avisos sobre fondos claros. */
+  --color-warning-text: #92400e;
+  --color-warning-50: #fff8e1;
+  --color-danger: #e53935;
+  /* [SUPUESTO] Texto oscuro para errores y estados vencidos. */
+  --color-danger-700: #b71c1c;
+  --color-danger-50: #fdecea;
+  --color-accent-teal: #0f7c86;
+  /* [SUPUESTO] Fondo claro para la acción especial en la barra lateral. */
+  --color-accent-teal-50: #e0f4f5;
+
+  /* Tipografía — familias */
+  /* [SUPUESTO] Sans geométrica basada en Inter y familias del sistema. */
+  --font-family-base: "Inter", system-ui, -apple-system, "Segoe UI", roboto, arial, sans-serif;
+  /* [SUPUESTO] Familia monoespaciada para lotes y microchips. */
+  --font-family-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  /* Tipografía — tamaños */
+  /* [SUPUESTO] Escala tipográfica basada en rem. */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+
+  /* Tipografía — pesos */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Tipografía — alturas de línea */
+  --line-height-tight: 1.2;
+  --line-height-base: 1.5;
+
+  /* Espaciado — escala de 4 px */
+  /* [SUPUESTO] Escala proporcional de espaciado para componentes y layout. */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+
+  /* Radios y bordes */
+  /* [SUPUESTO] Radios pequeños y medianos para controles. */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+  --border-width: 1px;
+
+  /* Sombras */
+  /* [SUPUESTO] Sombras suaves propuestas para tarjetas y diálogos. */
+  --shadow-card: 0 1px 2px rgba(16, 24, 40, 0.06);
+  --shadow-modal: 0 12px 32px rgba(16, 24, 40, 0.18);
+  --focus-ring: 0 0 0 3px rgba(46, 125, 50, 0.45);
+  /* [SUPUESTO] Superposición semitransparente para diálogos. */
+  --overlay-modal: rgba(31, 41, 51, 0.45);
+
+  /* Layout */
+  /* [SUPUESTO] Dimensiones iniciales de layout sujetas a revisión visual. */
+  --sidebar-width: 240px;
+  --header-height: 64px;
+  --content-max-width: 1200px;
+  --auth-card-width: 440px;
+  /* [SUPUESTO] Altura inicial para el gráfico de barras del dashboard. */
+  --chart-height: 240px;
+
+  /* Movimiento */
+  /* [SUPUESTO] Duraciones de transición propuestas para una interacción suave. */
+  --transition-fast: 150ms ease-out;
+  --transition-base: 250ms ease-out;
+
+  /* Breakpoints documentados — las variables no se usan dentro de @media. */
+  --bp-sm: 576px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+
+  /* [SUPUESTO] Objetivos táctiles mínimos y ancho colapsado del sidebar. */
+  --target-size: 44px;
+  --sidebar-collapsed-width: 64px;
+
+  /* [SUPUESTO] Borde visible para campos activos y de foco. */
+  --color-border-active: #8a94a3;
+}

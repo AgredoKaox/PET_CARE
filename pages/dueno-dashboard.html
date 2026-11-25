@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!-- PetCare — Dashboard del dueño | Versión 1.0 -->
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard del dueño — PetCare</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../assets/js/components/menu.js" defer></script>
+  <script src="../assets/js/components/tabs.js" defer></script>
+  <script src="../assets/js/components/modal.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="dashboard">
+    <aside class="sidebar" id="sidebar">
+  <a class="sidebar__brand" href="../index.html">PetCare</a>
+  <span class="sidebar__role-badge">Due?o de mascota</span>
+  <nav class="sidebar__nav" aria-label="Navegaci?n principal">
+    <ul class="sidebar__list">
+      <li><a class="sidebar__link sidebar__link--active" href="dueno-dashboard.html" aria-current="page"><span class="sidebar__icon" aria-hidden="true"></span>Dashboard</a></li>
+      <li><a class="sidebar__link" href="dueno-mascotas.html"><span class="sidebar__icon" aria-hidden="true"></span>Mis mascotas</a></li>
+      <li><a class="sidebar__link" href="dueno-calendario.html"><span class="sidebar__icon" aria-hidden="true"></span>Calendario de citas</a></li>
+      <li><a class="sidebar__link" href="dueno-configuracion.html"><span class="sidebar__icon" aria-hidden="true"></span>Configuraci?n</a></li>
+      <li><a class="sidebar__link" href="dueno-vacunas.html"><span class="sidebar__icon" aria-hidden="true"></span>Vacunas</a></li>
+      <li><a class="sidebar__link" href="dueno-tratamientos.html"><span class="sidebar__icon" aria-hidden="true"></span>Tratamientos</a></li>
+      <li><a class="sidebar__link" href="dueno-notas.html"><span class="sidebar__icon" aria-hidden="true"></span>Notas y observaciones</a></li>
+      <li><a class="sidebar__link" href="dueno-alertas.html"><span class="sidebar__icon" aria-hidden="true"></span>Notificaciones</a></li>
+      <li><a class="sidebar__link" href="dueno-solicitud-vet.html"><span class="sidebar__icon" aria-hidden="true"></span>Solicitud para ser veterinario</a></li>
+    </ul>
+  </nav>
+  <div class="sidebar__footer">
+    <a class="button button--accent-teal" href="dueno-solicitud-vet.html">Solicitar ser veterinario</a>
+    <a class="button button--danger-soft" href="login.html">Cerrar sesi?n</a>
+  </div>
+</aside>
+
+    <div class="dashboard__body">
+      <header class="header">
+        <button class="header__menu-toggle button button--icon" type="button" aria-controls="sidebar" aria-expanded="false">Menú</button>
+        <nav class="header__breadcrumb" aria-label="Ubicación">
+          <span class="header__crumb">Plataforma</span>
+          <span aria-hidden="true">&nbsp;/&nbsp;</span>
+          <span class="header__crumb header__crumb--current">Dashboard</span>
+        </nav>
+        <div class="header__role-switch" role="group" aria-label="Cambiar rol">
+          <button class="header__role header__role--active" type="button" aria-pressed="true">Dueño</button>
+          <button class="header__role" type="button" aria-pressed="false">Veterinario</button>
+          <button class="header__role" type="button" aria-pressed="false">Admin</button>
+        </div>
+        <div class="header__user">
+          <span class="header__avatar" aria-hidden="true">JA</span>
+          <span class="header__user-name">Juan Agredo</span>
+        </div>
+      </header>
+
+      <main id="contenido" class="dashboard__content">
+        <section class="hero" aria-labelledby="titulo-dashboard">
+          <div class="hero__content">
+            <h1 id="titulo-dashboard" class="hero__title">Bienvenido de vuelta, Juan</h1>
+            <p class="hero__subtitle">Tus mascotas están al día.</p>
+          </div>
+          <div class="hero__actions">
+            <button class="button button--primary" type="button">Agregar mascota</button>
+          </div>
+        </section>
+
+        <section class="dashboard__stats" aria-label="Indicadores generales">
+          <article class="card card--stat">
+            <div class="card__header">
+              <span class="card__icon card__icon--success" aria-hidden="true"></span>
+              <span class="badge badge--success">Activa</span>
+            </div>
+            <p class="card__value">1</p>
+            <h2 class="card__title">Mascota registrada</h2>
+            <p class="card__meta">Perfil de Luna</p>
+          </article>
+          <article class="card card--stat">
+            <div class="card__header">
+              <span class="card__icon card__icon--info" aria-hidden="true"></span>
+              <span class="badge badge--info">Próxima</span>
+            </div>
+            <p class="card__value">2</p>
+            <h2 class="card__title">Citas próximas</h2>
+            <p class="card__meta">Este mes</p>
+          </article>
+          <article class="card card--stat">
+            <div class="card__header">
+              <span class="card__icon card__icon--warning" aria-hidden="true"></span>
+              <span class="badge badge--warning">Pendiente</span>
+            </div>
+            <p class="card__value">1</p>
+            <h2 class="card__title">Vacuna pendiente</h2>
+            <p class="card__meta">Por revisar</p>
+          </article>
+          <article class="card card--stat">
+            <div class="card__header">
+              <span class="card__icon card__icon--success" aria-hidden="true"></span>
+              <span class="badge badge--success">Al día</span>
+            </div>
+            <p class="card__value">3</p>
+            <h2 class="card__title">Controles realizados</h2>
+            <p class="card__meta">Último período</p>
+          </article>
+        </section>
+
+        <section class="dashboard__sections">
+          <article class="card card--panel">
+            <header class="card__header">
+              <h2 class="card__title">Actividad mensual</h2>
+            </header>
+            <div class="chart-bar">
+              <div class="chart-bar__bars" aria-label="Actividad mensual">
+                <div class="chart-bar__item">
+                  <div class="chart-bar__bar chart-bar__bar--total" style="--value: 45%"></div>
+                  <span class="chart-bar__label">Ene</span>
+                </div>
+                <div class="chart-bar__item">
+                  <div class="chart-bar__bar chart-bar__bar--done" style="--value: 70%"></div>
+                  <span class="chart-bar__label">Feb</span>
+                </div>
+                <div class="chart-bar__item">
+                  <div class="chart-bar__bar chart-bar__bar--done" style="--value: 55%"></div>
+                  <span class="chart-bar__label">Mar</span>
+                </div>
+                <div class="chart-bar__item">
+                  <div class="chart-bar__bar chart-bar__bar--done" style="--value: 80%"></div>
+                  <span class="chart-bar__label">Abr</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card--panel">
+            <header class="card__header">
+              <h2 class="card__title">Alertas recientes</h2>
+            </header>
+            <div class="dashboard__alerts">
+              <article class="alert alert--success">
+                <span class="alert__dot" aria-hidden="true"></span>
+                <div class="alert__content">
+                  <h3 class="alert__title">Vacuna aplicada</h3>
+                  <p class="alert__description">Luna tiene su esquema al día.</p>
+                  <time class="alert__time" datetime="2026-11-24">Ayer</time>
+                </div>
+                <button class="button button--ghost button--sm" type="button">Marcar como leída</button>
+              </article>
+              <article class="alert alert--warning">
+                <span class="alert__dot" aria-hidden="true"></span>
+                <div class="alert__content">
+                  <h3 class="alert__title">Control próximo</h3>
+                  <p class="alert__description">Luna tiene una cita programada.</p>
+                  <time class="alert__time" datetime="2026-11-25">Hoy</time>
+                </div>
+                <button class="button button--ghost button--sm" type="button">Marcar como leída</button>
+              </article>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <nav class="footer__links" aria-label="Enlaces legales y de soporte">
+          <a class="footer__link" href="#">Política de privacidad</a>
+          <a class="footer__link" href="#">Términos de servicio</a>
+          <a class="footer__link" href="#">Soporte</a>
+        </nav>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

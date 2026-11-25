@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- PetCare — Medicamentos | Versión 1.0 -->
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Medicamentos — PetCare</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../assets/js/components/menu.js" defer></script>
+  <script src="../assets/js/components/tabs.js" defer></script>
+  <script src="../assets/js/components/modal.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="dashboard">
+    <aside class="sidebar" id="sidebar">
+  <a class="sidebar__brand" href="../index.html">PetCare</a>
+  <span class="sidebar__role-badge">Administrador</span>
+  <nav class="sidebar__nav" aria-label="Navegaci?n principal">
+    <ul class="sidebar__list">
+      <li><a class="sidebar__link" href="admin-dashboard.html"><span class="sidebar__icon" aria-hidden="true"></span>Panel de administraci?n</a></li>
+      <li><a class="sidebar__link" href="admin-clinicas.html"><span class="sidebar__icon" aria-hidden="true"></span>Cl?nicas</a></li>
+      <li><a class="sidebar__link sidebar__link--active" href="admin-medicamentos.html" aria-current="page"><span class="sidebar__icon" aria-hidden="true"></span>Medicamentos</a></li>
+      <li><a class="sidebar__link" href="admin-especies.html"><span class="sidebar__icon" aria-hidden="true"></span>Especies y razas</a></li>
+    </ul>
+  </nav>
+  <div class="sidebar__footer">
+    <a class="button button--danger-soft" href="login.html">Cerrar sesi?n</a>
+  </div>
+</aside>
+    <div class="dashboard__body">
+      <header class="header"><button class="header__menu-toggle button button--icon" type="button" aria-controls="sidebar" aria-expanded="false">Menú</button><nav class="header__breadcrumb" aria-label="Ubicación"><span class="header__crumb">Plataforma</span><span aria-hidden="true">&nbsp;/&nbsp;</span><span class="header__crumb header__crumb--current">Medicamentos</span></nav><div class="header__role-switch" role="group" aria-label="Cambiar rol"><button class="header__role" type="button" aria-pressed="false">Dueño</button><button class="header__role" type="button" aria-pressed="false">Veterinario</button><button class="header__role header__role--active" type="button" aria-pressed="true">Admin</button></div><div class="header__user"><span class="header__avatar" aria-hidden="true">CA</span><span class="header__user-name">Administrador</span></div></header>
+      <main id="contenido" class="dashboard__content">
+        <section class="hero" aria-labelledby="titulo-medicamentos"><div class="hero__content"><h1 id="titulo-medicamentos" class="hero__title">Medicamentos</h1><p class="hero__subtitle">Catálogo general de medicamentos.</p></div><div class="hero__actions"><button class="button button--primary" type="button">Agregar medicamento</button></div></section>
+        <article class="card card--panel"><header class="card__header"><h2 class="card__title">Inventario</h2><span class="badge badge--success">24 registrados</span></header><div class="table__wrapper"><table class="table"><caption>Medicamentos disponibles en PetCare</caption><thead><tr><th scope="col">Medicamento</th><th scope="col">Presentación</th><th scope="col">Categoría</th><th scope="col">Estado</th></tr></thead><tbody><tr><th scope="row">Amoxicilina</th><td>250 mg</td><td>Antibiótico</td><td><span class="badge badge--success">Disponible</span></td></tr><tr><th scope="row">Ivermectina</th><td>Solución</td><td>Antiparasitario</td><td><span class="badge badge--success">Disponible</span></td></tr><tr class="table__row--highlight"><th scope="row">Meloxicam</th><td>1.5 mg/ml</td><td>Antiinflamatorio</td><td><span class="badge badge--warning">Bajo inventario</span></td></tr></tbody></table></div></article>
+      </main>
+      <footer class="footer"><nav class="footer__links" aria-label="Enlaces legales y de soporte"><a class="footer__link" href="#">Política de privacidad</a><a class="footer__link" href="#">Términos de servicio</a><a class="footer__link" href="#">Soporte</a></nav></footer>
+    </div>
+  </div>
+</body>
+</html>

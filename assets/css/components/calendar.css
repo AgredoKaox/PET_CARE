@@ -1,0 +1,110 @@
+.calendar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+  overflow-x: auto;
+}
+
+.calendar__header,
+.calendar__week {
+  display: flex;
+  min-width: max-content;
+}
+
+.calendar__header {
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.calendar__day {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  min-width: var(--sidebar-width);
+  border-right: var(--border-width) solid var(--color-border);
+}
+
+.calendar__day:first-child {
+  min-width: var(--auth-card-width);
+}
+
+.calendar__day-name,
+.calendar__day-date {
+  display: block;
+  padding: var(--space-2) var(--space-3);
+  text-align: center;
+}
+
+.calendar__day-name {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+}
+
+.calendar__day-date {
+  font-weight: var(--font-weight-semibold);
+}
+
+.calendar__week {
+  min-height: var(--chart-height);
+}
+
+.calendar__time {
+  flex: 0 0 var(--header-height);
+  padding: var(--space-3) var(--space-2);
+  color: var(--color-text-muted);
+  border-right: var(--border-width) solid var(--color-border);
+  font-size: var(--font-size-xs);
+  text-align: right;
+}
+
+.calendar__slot {
+  min-height: var(--space-12);
+  padding: var(--space-2);
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.calendar__event {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.calendar__event--confirmed {
+  color: var(--color-warning-text);
+  background-color: var(--color-warning-50);
+}
+
+.calendar__event--pending {
+  color: var(--color-text-muted);
+  background-color: var(--color-bg);
+}
+
+.calendar__event--control {
+  color: var(--color-info);
+  background-color: var(--color-info-50);
+}
+
+.calendar__event--urgent {
+  color: var(--color-danger-700);
+  background-color: var(--color-danger-50);
+}
+
+.calendar__event--completed {
+  color: var(--color-primary-700);
+  background-color: var(--color-primary-50);
+}
+
+@media (min-width: 48rem) {
+  .calendar__day {
+    min-width: 0;
+  }
+
+  .calendar__day:first-child {
+    min-width: var(--space-12);
+  }
+}
