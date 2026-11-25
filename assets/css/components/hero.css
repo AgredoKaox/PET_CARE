@@ -31,8 +31,10 @@
 .hero--auth {
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  background: linear-gradient(var(--color-primary-50), var(--color-surface));
+  min-height: calc(100vh - var(--header-height));
+  padding: var(--space-6) var(--space-4);
+  /* [SUPUESTO] Se reutiliza el amarillo pálido disponible para completar el degradado. */
+  background: linear-gradient(110deg, var(--color-primary-50), var(--color-warning-50));
 }
 
 @media (min-width: 48rem) {

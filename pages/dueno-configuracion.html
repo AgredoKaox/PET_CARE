@@ -15,54 +15,96 @@
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <div class="dashboard">
     <aside class="sidebar" id="sidebar">
-  <a class="sidebar__brand" href="../index.html">PetCare</a>
-  <span class="sidebar__role-badge">Due?o de mascota</span>
-  <nav class="sidebar__nav" aria-label="Navegaci?n principal">
+  <a class="sidebar__brand" href="../index.html"><img src="../assets/images/logo-petcare.svg" alt="PetCare, Salud Animal" width="180" height="48"></a>
+  <span class="sidebar__role-badge">Dueño de mascota</span>
+  <nav class="sidebar__nav" aria-label="Navegación principal">
     <ul class="sidebar__list">
-      <li><a class="sidebar__link" href="dueno-dashboard.html"><span class="sidebar__icon" aria-hidden="true"></span>Dashboard</a></li>
-      <li><a class="sidebar__link" href="dueno-mascotas.html"><span class="sidebar__icon" aria-hidden="true"></span>Mis mascotas</a></li>
-      <li><a class="sidebar__link" href="dueno-calendario.html"><span class="sidebar__icon" aria-hidden="true"></span>Calendario de citas</a></li>
-      <li><a class="sidebar__link sidebar__link--active" href="dueno-configuracion.html" aria-current="page"><span class="sidebar__icon" aria-hidden="true"></span>Configuraci?n</a></li>
-      <li><a class="sidebar__link" href="dueno-vacunas.html"><span class="sidebar__icon" aria-hidden="true"></span>Vacunas</a></li>
-      <li><a class="sidebar__link" href="dueno-tratamientos.html"><span class="sidebar__icon" aria-hidden="true"></span>Tratamientos</a></li>
-      <li><a class="sidebar__link" href="dueno-notas.html"><span class="sidebar__icon" aria-hidden="true"></span>Notas y observaciones</a></li>
-      <li><a class="sidebar__link" href="dueno-alertas.html"><span class="sidebar__icon" aria-hidden="true"></span>Notificaciones</a></li>
-      <li><a class="sidebar__link" href="dueno-solicitud-vet.html"><span class="sidebar__icon" aria-hidden="true"></span>Solicitud para ser veterinario</a></li>
+      <li><a class="sidebar__link" href="dueno-dashboard.html"><img class="sidebar__icon" src="../assets/images/icons/dashboard.svg" alt="" aria-hidden="true">Dashboard</a></li>
+      <li><a class="sidebar__link" href="dueno-mascotas.html"><img class="sidebar__icon" src="../assets/images/icons/pets.svg" alt="" aria-hidden="true">Mis mascotas</a></li>
+      <li><a class="sidebar__link" href="dueno-calendario.html"><img class="sidebar__icon" src="../assets/images/icons/calendar.svg" alt="" aria-hidden="true">Calendario</a></li>
+      <li><a class="sidebar__link" href="dueno-alertas.html"><img class="sidebar__icon" src="../assets/images/icons/bell.svg" alt="" aria-hidden="true">Alertas</a></li>
+      <li><a class="sidebar__link sidebar__link--active" href="dueno-configuracion.html" aria-current="page"><img class="sidebar__icon" src="../assets/images/icons/user.svg" alt="" aria-hidden="true">Perfil</a></li>
     </ul>
   </nav>
   <div class="sidebar__footer">
     <a class="button button--accent-teal" href="dueno-solicitud-vet.html">Solicitar ser veterinario</a>
-    <a class="button button--danger-soft" href="login.html">Cerrar sesi?n</a>
+    <a class="button button--danger-soft" href="login.html">Cerrar sesión</a>
   </div>
 </aside>
     <div class="dashboard__body">
       <header class="header">
         <button class="header__menu-toggle button button--icon" type="button" aria-controls="sidebar" aria-expanded="false">Menú</button>
         <nav class="header__breadcrumb" aria-label="Ubicación"><span class="header__crumb">Plataforma</span><span aria-hidden="true">&nbsp;/&nbsp;</span><span class="header__crumb header__crumb--current">Configuración</span></nav>
-        <div class="header__role-switch" role="group" aria-label="Cambiar rol"><button class="header__role header__role--active" type="button" aria-pressed="true">Dueño</button><button class="header__role" type="button" aria-pressed="false">Veterinario</button><button class="header__role" type="button" aria-pressed="false">Admin</button></div>
+        <nav class="header__role-switch" aria-label="Cambiar rol">
+          <a class="header__role header__role--active" href="dueno-dashboard.html" aria-current="page">Dueño</a>
+          <a class="header__role" href="vet-dashboard.html">Veterinario</a>
+          <a class="header__role" href="admin-dashboard.html">Admin</a>
+        </nav>
         <div class="header__user"><span class="header__avatar" aria-hidden="true">JA</span><span class="header__user-name">Juan Agredo</span></div>
       </header>
       <main id="contenido" class="dashboard__content">
-        <section class="hero" aria-labelledby="titulo-configuracion"><div class="hero__content"><h1 id="titulo-configuracion" class="hero__title">Configuración de cuenta</h1><p class="hero__subtitle">Administra tus datos y preferencias.</p></div></section>
-        <section class="tabs" aria-label="Configuración">
-          <div class="tabs__list" role="tablist" aria-label="Secciones de configuración">
-            <button class="tabs__tab tabs__tab--active" type="button" role="tab" aria-selected="true">Datos personales</button>
-            <button class="tabs__tab" type="button" role="tab" aria-selected="false">Seguridad</button>
-            <button class="tabs__tab" type="button" role="tab" aria-selected="false">Preferencias</button>
+        <section class="hero" aria-labelledby="titulo-configuracion">
+          <div class="hero__content">
+            <h1 id="titulo-configuracion" class="hero__title">Configuración de cuenta</h1>
+            <p class="hero__subtitle">Gestiona tus datos personales, preferencias de notificación y seguridad.</p>
           </div>
-          <div class="tabs__panel" role="tabpanel">
-            <article class="card card--panel">
-              <header class="card__header"><h2 class="card__title">Datos personales</h2></header>
-              <form class="auth-form__form" action="#">
-                <div class="auth-form__field"><label class="auth-form__label" for="nombre">Nombre completo</label><input class="auth-form__input" id="nombre" name="nombre" type="text" value="Juan Agredo" autocomplete="name"></div>
-                <div class="auth-form__field"><label class="auth-form__label" for="correo">Correo electrónico</label><input class="auth-form__input" id="correo" name="correo" type="email" value="juan@petcare.co" autocomplete="email"></div>
-                <button class="button button--primary" type="submit">Guardar cambios</button>
+        </section>
+        <section class="tabs tabs--vertical screen-columns" aria-label="Opciones de la cuenta">
+          <nav class="screen-columns__aside" aria-label="Configuración de cuenta">
+            <div class="tabs__list" role="tablist" aria-orientation="vertical" aria-label="Secciones de configuración">
+              <button class="tabs__tab tabs__tab--active" id="tab-datos" type="button" role="tab" aria-selected="true" aria-controls="panel-datos">Datos personales</button>
+              <button class="tabs__tab" id="tab-seguridad" type="button" role="tab" aria-selected="false" aria-controls="panel-seguridad">Seguridad</button>
+              <button class="tabs__tab" id="tab-preferencias" type="button" role="tab" aria-selected="false" aria-controls="panel-preferencias">Preferencias</button>
+              <button class="tabs__tab" id="tab-privacidad" type="button" role="tab" aria-selected="false" aria-controls="panel-privacidad">Privacidad</button>
+            </div>
+          </nav>
+          <div class="screen-columns__main" aria-label="Detalles de configuración">
+            <section class="tabs__panel card card--panel" id="panel-datos" role="tabpanel" aria-labelledby="tab-datos">
+              <header class="card__header"><div><h2 class="card__title">Datos personales</h2><p class="card__meta">Actualiza la información de tu cuenta.</p></div></header>
+              <div class="pet-card__header"><span class="pet-card__avatar" aria-hidden="true">JA</span><div class="pet-card__identity"><h3 class="pet-card__name">Foto de perfil</h3><p class="pet-card__details">JPG o PNG · Máximo 2 MB</p><input class="screen-form__file-input" id="foto-perfil" name="foto-perfil" type="file" accept="image/*" aria-label="Seleccionar foto de perfil"><label class="button button--secondary screen-upload__button" for="foto-perfil">Cambiar foto</label></div></div>
+              <form class="screen-form" action="#">
+                <div class="screen-form__field"><label class="screen-form__label" for="nombre">Nombre completo</label><input class="screen-form__input" id="nombre" name="nombre" type="text" value="Juan Agredo" autocomplete="name"></div>
+                <div class="screen-form__field"><label class="screen-form__label" for="correo">Correo electrónico</label><input class="screen-form__input" id="correo" name="correo" type="email" value="juan@petcare.co" autocomplete="email"></div>
+                <div class="screen-form__field"><label class="screen-form__label" for="telefono">Teléfono</label><input class="screen-form__input" id="telefono" name="telefono" type="tel" value="+57 300 123 4567" autocomplete="tel"></div>
+                <div class="screen-form__field"><label class="screen-form__label" for="ciudad">Ciudad</label><input class="screen-form__input" id="ciudad" name="ciudad" type="text" value="Bogotá, Colombia" autocomplete="address-level2"></div>
+                <div class="screen-form__field screen-form__field--full"><button class="button button--primary" type="submit">Guardar cambios</button></div>
               </form>
-            </article>
+            </section>
+            <section class="tabs__panel card card--panel" id="panel-seguridad" role="tabpanel" aria-labelledby="tab-seguridad" hidden>
+              <header class="card__header"><div><h2 class="card__title">Seguridad</h2><p class="card__meta">Mantén protegida tu cuenta.</p></div></header>
+              <form class="screen-form" action="#">
+                <div class="screen-form__field screen-form__field--full"><label class="screen-form__label" for="contrasena-actual">Contraseña actual</label><input class="screen-form__input" id="contrasena-actual" name="contrasena-actual" type="password" autocomplete="current-password"></div>
+                <div class="screen-form__field"><label class="screen-form__label" for="contrasena-nueva">Nueva contraseña</label><input class="screen-form__input" id="contrasena-nueva" name="contrasena-nueva" type="password" autocomplete="new-password"></div>
+                <div class="screen-form__field"><label class="screen-form__label" for="contrasena-confirmar">Confirmar nueva contraseña</label><input class="screen-form__input" id="contrasena-confirmar" name="contrasena-confirmar" type="password" autocomplete="new-password"></div>
+                <div class="screen-form__field screen-form__field--full"><button class="button button--primary" type="submit">Actualizar contraseña</button></div>
+              </form>
+              <p class="card__meta">Última actualización: nunca</p>
+            </section>
+            <section class="tabs__panel card card--panel" id="panel-preferencias" role="tabpanel" aria-labelledby="tab-preferencias" hidden>
+              <header class="card__header"><div><h2 class="card__title">Preferencias</h2><p class="card__meta">Elige cómo quieres recibir información de PetCare.</p></div></header>
+              <div class="screen-toggle-list">
+                <label class="screen-toggle-list__item"><span class="screen-toggle-list__description"><strong>Correo electrónico</strong><span>Resúmenes y avisos críticos</span></span><input type="checkbox" checked></label>
+                <label class="screen-toggle-list__item"><span class="screen-toggle-list__description"><strong>Notificaciones push</strong><span>Alertas en tiempo real</span></span><input type="checkbox" checked></label>
+                <label class="screen-toggle-list__item"><span class="screen-toggle-list__description"><strong>Mensajes de texto (SMS)</strong><span>Recordatorios de citas</span></span><input type="checkbox"></label>
+              </div>
+              <label class="screen-form__field"><span class="screen-form__label">Antelación del recordatorio</span><select class="screen-form__select"><option>24 horas antes</option><option>12 horas antes</option><option>1 hora antes</option></select></label>
+            </section>
+            <section class="tabs__panel card card--panel" id="panel-privacidad" role="tabpanel" aria-labelledby="tab-privacidad" hidden>
+              <header class="card__header"><div><h2 class="card__title">Privacidad</h2><p class="card__meta">Gestiona los datos de tu cuenta.</p></div></header>
+              <p>Solicita una copia de tu información o revisa los documentos legales de PetCare.</p>
+              <div class="card__actions"><span class="card__meta">Política de privacidad pendiente de publicación</span><button class="button button--danger-soft" type="button" data-modal-open="modal-eliminar-cuenta">Eliminar cuenta</button></div>
+            </section>
           </div>
         </section>
       </main>
       <footer class="footer"><nav class="footer__links" aria-label="Enlaces legales y de soporte"><a class="footer__link" href="#">Política de privacidad</a><a class="footer__link" href="#">Términos de servicio</a><a class="footer__link" href="#">Soporte</a></nav></footer>
+    </div>
+  </div>
+  <div class="modal modal--sheet" id="modal-eliminar-cuenta" role="dialog" aria-modal="true" aria-labelledby="titulo-modal-eliminar" hidden>
+    <div class="modal__dialog">
+      <header class="modal__header"><h2 class="modal__title" id="titulo-modal-eliminar">Eliminar cuenta</h2><button class="modal__close" type="button" aria-label="Cerrar" data-modal-close>Cerrar</button></header>
+      <div class="modal__body"><p>Esta acción no se puede deshacer. ¿Deseas continuar?</p></div>
+      <footer class="modal__footer"><button class="button button--secondary" type="button" data-modal-close>Conservar cuenta</button><button class="button button--danger" type="button">Eliminar cuenta</button></footer>
     </div>
   </div>
 </body>

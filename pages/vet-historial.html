@@ -15,30 +15,65 @@
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <div class="dashboard">
     <aside class="sidebar" id="sidebar">
-  <a class="sidebar__brand" href="../index.html">PetCare</a>
+  <a class="sidebar__brand" href="../index.html"><img src="../assets/images/logo-petcare.svg" alt="PetCare, Salud Animal" width="180" height="48"></a>
   <span class="sidebar__role-badge">Veterinario</span>
-  <nav class="sidebar__nav" aria-label="Navegaci?n principal">
+  <nav class="sidebar__nav" aria-label="Navegación principal">
     <ul class="sidebar__list">
-      <li><a class="sidebar__link" href="vet-dashboard.html"><span class="sidebar__icon" aria-hidden="true"></span>Panel veterinario</a></li>
-      <li><a class="sidebar__link sidebar__link--active" href="vet-historial.html" aria-current="page"><span class="sidebar__icon" aria-hidden="true"></span>Historial cl?nico</a></li>
+      <li><a class="sidebar__link" href="vet-dashboard.html"><img class="sidebar__icon" src="../assets/images/icons/dashboard.svg" alt="" aria-hidden="true">Dashboard</a></li>
+      <li><a class="sidebar__link" href="vet-dashboard.html#citas-hoy"><img class="sidebar__icon" src="../assets/images/icons/calendar.svg" alt="" aria-hidden="true">Citas de hoy</a></li>
+      <li><a class="sidebar__link sidebar__link--active" href="vet-historial.html" aria-current="page"><img class="sidebar__icon" src="../assets/images/icons/history.svg" alt="" aria-hidden="true">Historiales</a></li>
+      <li><a class="sidebar__link" href="vet-dashboard.html#perfil"><img class="sidebar__icon" src="../assets/images/icons/user.svg" alt="" aria-hidden="true">Mi perfil</a></li>
     </ul>
   </nav>
   <div class="sidebar__footer">
-    <a class="button button--danger-soft" href="login.html">Cerrar sesi?n</a>
+    <a class="button button--danger-soft" href="login.html">Cerrar sesión</a>
   </div>
 </aside>
     <div class="dashboard__body">
-      <header class="header"><button class="header__menu-toggle button button--icon" type="button" aria-controls="sidebar" aria-expanded="false">Menú</button><nav class="header__breadcrumb" aria-label="Ubicación"><span class="header__crumb">Plataforma</span><span aria-hidden="true">&nbsp;/&nbsp;</span><span class="header__crumb header__crumb--current">Historial clínico</span></nav><div class="header__role-switch" role="group" aria-label="Cambiar rol"><button class="header__role" type="button" aria-pressed="false">Dueño</button><button class="header__role header__role--active" type="button" aria-pressed="true">Veterinario</button><button class="header__role" type="button" aria-pressed="false">Admin</button></div><div class="header__user"><span class="header__avatar" aria-hidden="true">LG</span><span class="header__user-name">Laura Gómez</span></div></header>
+      <header class="header"><button class="header__menu-toggle button button--icon" type="button" aria-controls="sidebar" aria-expanded="false">Menú</button><nav class="header__breadcrumb" aria-label="Ubicación"><span class="header__crumb">Plataforma</span><span aria-hidden="true">&nbsp;/&nbsp;</span><span class="header__crumb header__crumb--current">Historial clínico</span></nav><nav class="header__role-switch" aria-label="Cambiar rol">
+          <a class="header__role" href="dueno-dashboard.html">Dueño</a>
+          <a class="header__role header__role--active" href="vet-dashboard.html" aria-current="page">Veterinario</a>
+          <a class="header__role" href="admin-dashboard.html">Admin</a>
+        </nav><div class="header__user"><span class="header__avatar" aria-hidden="true">AR</span><span class="header__user-name">Dr. Alejandro Ramírez</span></div></header>
       <main id="contenido" class="dashboard__content">
-        <section class="hero" aria-labelledby="titulo-historial"><div class="hero__content"><h1 id="titulo-historial" class="hero__title">Historial clínico</h1><p class="hero__subtitle">Paciente: Luna.</p></div></section>
-        <section class="tabs" aria-label="Historial clínico de Luna">
-          <div class="tabs__list" role="tablist" aria-label="Tipos de registro"><button class="tabs__tab tabs__tab--active" type="button" role="tab" aria-selected="true">Consultas</button><button class="tabs__tab" type="button" role="tab" aria-selected="false">Vacunas</button><button class="tabs__tab" type="button" role="tab" aria-selected="false">Exámenes</button></div>
-          <div class="tabs__panel" role="tabpanel">
-            <article class="card card--panel"><header class="card__header"><h2 class="card__title">Consultas</h2></header><div class="table__wrapper"><table class="table"><caption>Historial de consultas de Luna</caption><thead><tr><th scope="col">Fecha</th><th scope="col">Motivo</th><th scope="col">Veterinario</th><th scope="col">Estado</th></tr></thead><tbody><tr><td>25/11/2026</td><td>Control general</td><td>Laura Gómez</td><td><span class="badge badge--info">Próxima</span></td></tr><tr><td>20/09/2026</td><td>Seguimiento</td><td>Laura Gómez</td><td><span class="badge badge--success">Completada</span></td></tr></tbody></table></div></article>
+        <section class="hero" aria-labelledby="titulo-historial"><div class="hero__content"><h1 id="titulo-historial" class="hero__title">Historial Clínico</h1><p class="hero__subtitle">Consulta los registros médicos de tus pacientes.</p></div><div class="hero__actions"><button class="button button--primary" type="button" data-modal-open="modal-nueva-consulta">Nueva consulta</button></div></section>
+        <section class="screen-toolbar" aria-label="Buscar y filtrar historiales">
+          <div class="screen-toolbar__filters">
+            <label class="screen-form__field screen-toolbar__search"><span class="screen-form__label">Buscar historial</span><input class="screen-form__input" type="search" placeholder="Nombre de mascota o responsable" autocomplete="off"></label>
+            <label class="screen-form__field"><span class="screen-form__label">Tipo</span><select class="screen-form__select"><option>Todos</option><option>Consultas</option><option>Vacunas</option><option>Cirugías</option><option>Exámenes</option></select></label>
           </div>
+        </section>
+        <article class="card vet-patient">
+          <span class="pet-card__avatar" aria-hidden="true">LU</span>
+          <div class="vet-patient__details"><h2 class="card__title">Luna <span class="badge badge--neutral">Hembra</span></h2><p class="card__meta">Canino · Golden Retriever · 3 años · 28 kg · Microchip: 985121234567890</p></div>
+          <div class="vet-patient__owner"><span class="screen-summary__label">Responsable</span><strong>Juan Agredo</strong><span class="card__meta">+57 300 123 4567</span></div>
+        </article>
+        <section class="tabs" aria-label="Registros clínicos de Luna">
+          <div class="tabs__list" role="tablist" aria-label="Tipos de registro">
+            <button class="tabs__tab tabs__tab--active" id="tab-consultas" type="button" role="tab" aria-selected="true" aria-controls="panel-consultas">Consultas</button>
+            <button class="tabs__tab" id="tab-vacunas" type="button" role="tab" aria-selected="false" aria-controls="panel-vacunas">Vacunas</button>
+            <button class="tabs__tab" id="tab-cirugias" type="button" role="tab" aria-selected="false" aria-controls="panel-cirugias">Cirugías</button>
+            <button class="tabs__tab" id="tab-examenes" type="button" role="tab" aria-selected="false" aria-controls="panel-examenes">Exámenes</button>
+            <button class="tabs__tab" id="tab-notas" type="button" role="tab" aria-selected="false" aria-controls="panel-notas">Notas</button>
+          </div>
+          <section class="tabs__panel" id="panel-consultas" role="tabpanel" aria-labelledby="tab-consultas">
+            <article class="card card--panel"><header class="card__header"><div><h2 class="card__title">Consultas médicas</h2><p class="card__meta">Registros clínicos de Luna</p></div></header>
+              <article class="screen-stack__item"><div class="screen-stack__content"><h3 class="screen-stack__title">7 sep 2026 · 10:30 a. m. · Control preventivo</h3><p class="screen-stack__meta">Dr. Alejandro Ramírez · Motivo: control anual de salud.</p><p>Paciente alerta, hidratación normal. Se recomienda mantener el plan de alimentación actual y revisar esquema de vacunación.</p></div><span class="badge badge--info">Próxima</span></article>
+              <article class="screen-stack__item"><div class="screen-stack__content"><h3 class="screen-stack__title">20 ago 2026 · Consulta general</h3><p class="screen-stack__meta">Dr. Alejandro Ramírez · Seguimiento completado.</p><p>Examen físico sin hallazgos relevantes. Peso estable y signos vitales dentro de rango.</p></div><span class="badge badge--success">Completada</span></article>
+            </article>
+          </section>
+          <section class="tabs__panel" id="panel-vacunas" role="tabpanel" aria-labelledby="tab-vacunas" hidden><article class="card card--panel"><h2 class="card__title">Vacunas aplicadas</h2><p>Antirrábica · 15 ago 2026 · Próximo refuerzo: 15 ago 2027.</p><p>Triple canina · 20 mar 2026 · Próximo refuerzo: 20 mar 2027.</p></article></section>
+          <section class="tabs__panel" id="panel-cirugias" role="tabpanel" aria-labelledby="tab-cirugias" hidden><article class="card card--panel"><h2 class="card__title">Cirugías</h2><p>No se registran intervenciones quirúrgicas para Luna.</p></article></section>
+          <section class="tabs__panel" id="panel-examenes" role="tabpanel" aria-labelledby="tab-examenes" hidden><article class="card card--panel"><h2 class="card__title">Exámenes</h2><p>Hemograma completo · 20 ago 2026 · Resultado dentro de parámetros esperados.</p></article></section>
+          <section class="tabs__panel" id="panel-notas" role="tabpanel" aria-labelledby="tab-notas" hidden><article class="card card--panel"><h2 class="card__title">Notas clínicas</h2><p>Revisar apetito y actividad en el próximo control.</p></article></section>
         </section>
       </main>
       <footer class="footer"><nav class="footer__links" aria-label="Enlaces legales y de soporte"><a class="footer__link" href="#">Política de privacidad</a><a class="footer__link" href="#">Términos de servicio</a><a class="footer__link" href="#">Soporte</a></nav></footer>
+    </div>
+    <div class="modal modal--sheet" id="modal-nueva-consulta" role="dialog" aria-modal="true" aria-labelledby="titulo-modal-consulta" hidden>
+      <div class="modal__dialog"><header class="modal__header"><h2 class="modal__title" id="titulo-modal-consulta">Nueva consulta</h2><button class="modal__close" type="button" aria-label="Cerrar" data-modal-close>Cerrar</button></header>
+        <form class="modal__body screen-form" action="#"><label class="screen-form__field"><span class="screen-form__label">Mascota</span><select class="screen-form__select"><option>Luna</option><option>Tobias</option><option>Pelusa</option></select></label><label class="screen-form__field"><span class="screen-form__label">Motivo de consulta</span><input class="screen-form__input" type="text"></label><label class="screen-form__field screen-form__field--full"><span class="screen-form__label">Observaciones</span><textarea class="screen-form__textarea"></textarea></label><footer class="modal__footer"><button class="button button--secondary" type="button" data-modal-close>Cancelar</button><button class="button button--primary" type="submit">Guardar consulta</button></footer></form>
+      </div>
     </div>
   </div>
 </body>

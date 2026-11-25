@@ -15,6 +15,8 @@
 .modal__dialog {
   width: 100%;
   max-width: var(--auth-card-width);
+  max-height: 100%;
+  overflow-y: auto;
   background-color: var(--color-surface);
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   box-shadow: var(--shadow-modal);

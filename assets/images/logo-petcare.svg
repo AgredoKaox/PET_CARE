@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 48" role="img">
+  <rect x="2" y="4" width="40" height="40" rx="10" fill="#4caf50"/>
+  <g fill="#fff">
+    <ellipse cx="22" cy="27" rx="7" ry="6"/>
+    <ellipse cx="12" cy="19" rx="3.1" ry="4.3" transform="rotate(-25 12 19)"/>
+    <ellipse cx="20" cy="15" rx="3.1" ry="4.3" transform="rotate(-8 20 15)"/>
+    <ellipse cx="28" cy="15" rx="3.1" ry="4.3" transform="rotate(8 28 15)"/>
+    <ellipse cx="35" cy="20" rx="3.1" ry="4.3" transform="rotate(25 35 20)"/>
+  </g>
+  <text x="50" y="25" fill="#1f2933" font-family="Arial, sans-serif" font-size="19" font-weight="700">PetCare</text>
+  <text x="51" y="37" fill="#5f6b7a" font-family="Arial, sans-serif" font-size="7.5" letter-spacing="1.1">SALUD ANIMAL</text>
+</svg>

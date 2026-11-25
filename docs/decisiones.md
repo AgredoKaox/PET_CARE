@@ -21,6 +21,23 @@
 - Los breakpoints documentados son 576 px, 768 px, 1024 px y 1280 px.
 - El sidebar se oculta en móvil, se colapsa a iconos en tablet y se fija en 240 px en escritorio.
 
+## Refactor visual de las pantallas internas
+
+- Se reutilizan las 17 rutas existentes y se mantiene el HTML compartido duplicado en cada página; la navegación lateral se ajusta al rol y a las rutas disponibles.
+- [SUPUESTO] Las cifras y algunos registros que no se alcanzan a leer con claridad en el PDF se completan con datos demostrativos coherentes con el prototipo.
+- [PENDIENTE] Los formularios de gestión, filtros, acciones de aprobar/eliminar y opciones de calendario son visuales; no guardan información ni ejecutan operaciones porque el proyecto no tiene backend.
+- [PENDIENTE] Los enlaces legales y de soporte siguen sin destino hasta que se definan sus páginas.
+
 ## Datos de ejemplo
 
 - Se usan Juan Agredo como dueño principal y Luna como mascota principal para mantener coherencia.
+
+## Pantallas de acceso
+
+- [SUPUESTO] Se reutiliza el token `--color-warning-50` como extremo amarillo pálido del degradado de acceso porque la especificación de tokens no define un color de fondo amarillo adicional.
+- [SUPUESTO] El medidor visual considera baja una contraseña vacía o con pocos caracteres; media requiere al menos 8 caracteres y 2 tipos; alta requiere al menos 12 caracteres y 3 tipos (minúsculas, mayúsculas, números o símbolos). La pantalla inicia con nivel medio para coincidir con la referencia; se recalcula al escribir.
+- [SUPUESTO] La casilla de términos de registro inicia marcada para reproducir el estado que muestra el PDF; confirmar este comportamiento antes de usarlo en un producto real.
+- Los campos de contraseña permanecen vacíos aunque el PDF muestre caracteres enmascarados, para no incluir una contraseña ficticia en el documento o en el autocompletado.
+- [PENDIENTE] El PDF representa Google con un círculo y una X; en la interfaz se usa el logotipo oficial multicolor de Google hasta confirmar si la X era intencional.
+- [PENDIENTE] No hay páginas legales ni de soporte en el alcance actual; los enlaces de privacidad, términos y soporte son destinos de marcador y deberán conectarse cuando se definan sus contenidos.
+- [PENDIENTE] No existe pantalla de recuperación de contraseña en las 17 vistas; "¿Olvidaste tu contraseña?" conserva un destino de marcador hasta que se diseñe el flujo correspondiente.

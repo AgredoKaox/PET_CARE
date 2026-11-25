@@ -42,9 +42,10 @@
         tab.addEventListener('keydown', (event) => {
           const currentIndex = tabButtons.indexOf(document.activeElement);
           let nextIndex = currentIndex;
+          const vertical = tabList.getAttribute('aria-orientation') === 'vertical';
 
-          if (event.key === 'ArrowRight') nextIndex = (currentIndex + 1) % tabButtons.length;
-          if (event.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + tabButtons.length) % tabButtons.length;
+          if (event.key === (vertical ? 'ArrowDown' : 'ArrowRight')) nextIndex = (currentIndex + 1) % tabButtons.length;
+          if (event.key === (vertical ? 'ArrowUp' : 'ArrowLeft')) nextIndex = (currentIndex - 1 + tabButtons.length) % tabButtons.length;
           if (event.key === 'Home') nextIndex = 0;
           if (event.key === 'End') nextIndex = tabButtons.length - 1;
 

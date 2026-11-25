@@ -49,6 +49,12 @@ body.body--modal-open {
   text-decoration: none;
 }
 
+.sidebar__brand img {
+  display: block;
+  width: min(100%, var(--sidebar-width));
+  height: auto;
+}
+
 .sidebar__role-badge {
   width: fit-content;
   padding: var(--space-1) var(--space-2);
@@ -88,10 +94,11 @@ body.body--modal-open {
 }
 
 .sidebar__icon {
+  display: block;
+  flex: 0 0 var(--space-4);
   width: var(--space-4);
   height: var(--space-4);
-  background-color: currentColor;
-  border-radius: var(--radius-sm);
+  object-fit: contain;
 }
 
 .sidebar__footer {

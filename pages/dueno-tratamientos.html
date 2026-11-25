@@ -14,33 +14,57 @@
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <div class="dashboard"><aside class="sidebar" id="sidebar">
-  <a class="sidebar__brand" href="../index.html">PetCare</a>
-  <span class="sidebar__role-badge">Due?o de mascota</span>
-  <nav class="sidebar__nav" aria-label="Navegaci?n principal">
+  <a class="sidebar__brand" href="../index.html"><img src="../assets/images/logo-petcare.svg" alt="PetCare, Salud Animal" width="180" height="48"></a>
+  <span class="sidebar__role-badge">Dueño de mascota</span>
+  <nav class="sidebar__nav" aria-label="Navegación principal">
     <ul class="sidebar__list">
-      <li><a class="sidebar__link" href="dueno-dashboard.html"><span class="sidebar__icon" aria-hidden="true"></span>Dashboard</a></li>
-      <li><a class="sidebar__link" href="dueno-mascotas.html"><span class="sidebar__icon" aria-hidden="true"></span>Mis mascotas</a></li>
-      <li><a class="sidebar__link" href="dueno-calendario.html"><span class="sidebar__icon" aria-hidden="true"></span>Calendario de citas</a></li>
-      <li><a class="sidebar__link" href="dueno-configuracion.html"><span class="sidebar__icon" aria-hidden="true"></span>Configuraci?n</a></li>
-      <li><a class="sidebar__link" href="dueno-vacunas.html"><span class="sidebar__icon" aria-hidden="true"></span>Vacunas</a></li>
-      <li><a class="sidebar__link sidebar__link--active" href="dueno-tratamientos.html" aria-current="page"><span class="sidebar__icon" aria-hidden="true"></span>Tratamientos</a></li>
-      <li><a class="sidebar__link" href="dueno-notas.html"><span class="sidebar__icon" aria-hidden="true"></span>Notas y observaciones</a></li>
-      <li><a class="sidebar__link" href="dueno-alertas.html"><span class="sidebar__icon" aria-hidden="true"></span>Notificaciones</a></li>
-      <li><a class="sidebar__link" href="dueno-solicitud-vet.html"><span class="sidebar__icon" aria-hidden="true"></span>Solicitud para ser veterinario</a></li>
+      <li><a class="sidebar__link" href="dueno-dashboard.html"><img class="sidebar__icon" src="../assets/images/icons/dashboard.svg" alt="" aria-hidden="true">Dashboard</a></li>
+      <li><a class="sidebar__link" href="dueno-mascotas.html"><img class="sidebar__icon" src="../assets/images/icons/pets.svg" alt="" aria-hidden="true">Mis mascotas</a></li>
+      <li><a class="sidebar__link" href="dueno-calendario.html"><img class="sidebar__icon" src="../assets/images/icons/calendar.svg" alt="" aria-hidden="true">Calendario</a></li>
+      <li><a class="sidebar__link" href="dueno-alertas.html"><img class="sidebar__icon" src="../assets/images/icons/bell.svg" alt="" aria-hidden="true">Alertas</a></li>
+      <li><a class="sidebar__link" href="dueno-configuracion.html"><img class="sidebar__icon" src="../assets/images/icons/user.svg" alt="" aria-hidden="true">Perfil</a></li>
     </ul>
   </nav>
   <div class="sidebar__footer">
     <a class="button button--accent-teal" href="dueno-solicitud-vet.html">Solicitar ser veterinario</a>
-    <a class="button button--danger-soft" href="login.html">Cerrar sesi?n</a>
+    <a class="button button--danger-soft" href="login.html">Cerrar sesión</a>
   </div>
 </aside>
   <div class="dashboard__body">
-    <header class="header"><button class="header__menu-toggle button button--icon" type="button" aria-controls="sidebar" aria-expanded="false">Menú</button><nav class="header__breadcrumb" aria-label="Ubicación"><span class="header__crumb">Plataforma</span><span aria-hidden="true">&nbsp;/&nbsp;</span><span class="header__crumb header__crumb--current">Tratamientos</span></nav><div class="header__role-switch" role="group" aria-label="Cambiar rol"><button class="header__role header__role--active" type="button" aria-pressed="true">Dueño</button><button class="header__role" type="button" aria-pressed="false">Veterinario</button><button class="header__role" type="button" aria-pressed="false">Admin</button></div><div class="header__user"><span class="header__avatar" aria-hidden="true">JA</span><span class="header__user-name">Juan Agredo</span></div></header>
+    <header class="header"><button class="header__menu-toggle button button--icon" type="button" aria-controls="sidebar" aria-expanded="false">Menú</button><nav class="header__breadcrumb" aria-label="Ubicación"><span class="header__crumb">Plataforma</span><span aria-hidden="true">&nbsp;/&nbsp;</span><span class="header__crumb header__crumb--current">Tratamientos</span></nav><nav class="header__role-switch" aria-label="Cambiar rol">
+          <a class="header__role header__role--active" href="dueno-dashboard.html" aria-current="page">Dueño</a>
+          <a class="header__role" href="vet-dashboard.html">Veterinario</a>
+          <a class="header__role" href="admin-dashboard.html">Admin</a>
+        </nav><div class="header__user"><span class="header__avatar" aria-hidden="true">JA</span><span class="header__user-name">Juan Agredo</span></div></header>
     <main id="contenido" class="dashboard__content">
-      <section class="hero" aria-labelledby="titulo-tratamientos"><div class="hero__content"><h1 id="titulo-tratamientos" class="hero__title">Tratamientos activos</h1><p class="hero__subtitle">Seguimiento de Luna.</p></div></section>
-      <section class="dashboard__sections">
-        <article class="card card--panel"><header class="card__header"><h2 class="card__title">Lista de tratamientos</h2></header><div class="dashboard__alerts"><article class="alert alert--success"><span class="alert__dot" aria-hidden="true"></span><div class="alert__content"><h3 class="alert__title">Suplemento nutricional</h3><p class="alert__description">Una dosis diaria con el desayuno.</p><time class="alert__time" datetime="2026-11-25">Activo</time></div></article></div></article>
-        <article class="card card--panel"><header class="card__header"><h2 class="card__title">Detalle</h2></header><p><strong>Suplemento nutricional</strong></p><p class="card__meta">Inicio: 20 de noviembre de 2026</p><p class="card__meta">Duración: 30 días</p><div class="card__actions"><button class="button button--secondary button--sm" type="button">Ver indicaciones</button></div></article>
+      <section class="hero" aria-labelledby="titulo-tratamientos"><div class="hero__content"><h1 id="titulo-tratamientos" class="hero__title">Tratamientos</h1><p class="hero__subtitle">Seguimiento de los tratamientos médicos de tus mascotas.</p></div><div class="hero__actions"><a class="button button--secondary" href="vet-historial.html">Ver historial clínico</a></div></section>
+      <section class="dashboard__stats" aria-label="Resumen de tratamientos">
+        <article class="card card--stat"><span class="badge badge--success">En curso</span><p class="card__value">2</p><h2 class="card__title">Tratamientos activos</h2><p class="card__meta">En dos mascotas</p></article>
+        <article class="card card--stat"><span class="badge badge--warning">Próxima dosis</span><p class="card__value">1</p><h2 class="card__title">Dosis para hoy</h2><p class="card__meta">Revisar el horario</p></article>
+        <article class="card card--stat"><span class="badge badge--info">Este mes</span><p class="card__value">1</p><h2 class="card__title">Tratamiento finalizado</h2><p class="card__meta">Seguimiento completado</p></article>
+      </section>
+      <section class="screen-columns" aria-label="Tratamientos activos y detalle">
+        <div class="screen-columns__main">
+          <article class="card card--panel">
+            <header class="card__header"><div><h2 class="card__title">Tratamientos activos</h2><p class="card__meta">Selecciona un tratamiento para ver sus indicaciones.</p></div></header>
+            <div class="screen-stack">
+              <article class="screen-stack__item"><div class="pet-card__header"><span class="pet-card__avatar" aria-hidden="true">LU</span><div class="screen-stack__content"><h3 class="screen-stack__title">Suplemento nutricional · Luna</h3><p class="screen-stack__meta">Una dosis diaria con el desayuno · 18 de 30 días</p></div></div><span class="badge badge--success">Activo</span></article>
+              <article class="screen-stack__item"><div class="pet-card__header"><span class="pet-card__avatar" aria-hidden="true">TO</span><div class="screen-stack__content"><h3 class="screen-stack__title">Antibiótico oral · Tobias</h3><p class="screen-stack__meta">Cada 12 horas · 5 de 7 días</p></div></div><span class="badge badge--warning">Dosis pendiente</span></article>
+              <article class="screen-stack__item"><div class="pet-card__header"><span class="pet-card__avatar" aria-hidden="true">PE</span><div class="screen-stack__content"><h3 class="screen-stack__title">Control antiparasitario · Pelusa</h3><p class="screen-stack__meta">Dosis mensual · Próxima el 12 de septiembre</p></div></div><span class="badge badge--info">Programado</span></article>
+            </div>
+          </article>
+          <article class="card card--panel">
+            <header class="card__header"><h2 class="card__title">Historial reciente</h2><a class="footer__link" href="dueno-notas.html">Ver notas</a></header>
+            <div class="table__wrapper"><table class="table"><caption>Últimas dosis administradas</caption><thead><tr><th scope="col">Fecha</th><th scope="col">Mascota</th><th scope="col">Tratamiento</th><th scope="col">Estado</th></tr></thead><tbody><tr><td>7 sep 2026</td><th scope="row">Luna</th><td>Suplemento nutricional</td><td><span class="badge badge--success">Administrada</span></td></tr><tr><td>6 sep 2026</td><th scope="row">Tobias</th><td>Antibiótico oral</td><td><span class="badge badge--success">Administrada</span></td></tr></tbody></table></div>
+          </article>
+        </div>
+        <aside class="card card--panel screen-columns__aside" aria-labelledby="detalle-tratamiento">
+          <h2 class="card__title" id="detalle-tratamiento">Detalle del tratamiento</h2>
+          <div class="pet-card__header"><span class="pet-card__avatar" aria-hidden="true">LU</span><div class="pet-card__identity"><h3 class="pet-card__name">Luna</h3><p class="pet-card__details">Suplemento nutricional</p></div></div>
+          <dl class="screen-stack"><div><dt class="screen-summary__label">Indicación</dt><dd>Una dosis diaria con el desayuno.</dd></div><div><dt class="screen-summary__label">Fecha de inicio</dt><dd>20 de agosto de 2026</dd></div><div><dt class="screen-summary__label">Duración</dt><dd>30 días</dd></div><div><dt class="screen-summary__label">Veterinario</dt><dd>Dr. Alejandro Ramírez</dd></div></dl>
+          <p class="card__meta">Progreso: 18 de 30 días</p>
+          <div class="screen-stack__actions"><a class="button button--primary" href="vet-historial.html">Ver indicaciones</a><a class="button button--secondary" href="dueno-calendario.html">Agendar control</a></div>
+        </aside>
       </section>
     </main>
     <footer class="footer"><nav class="footer__links" aria-label="Enlaces legales y de soporte"><a class="footer__link" href="#">Política de privacidad</a><a class="footer__link" href="#">Términos de servicio</a><a class="footer__link" href="#">Soporte</a></nav></footer>

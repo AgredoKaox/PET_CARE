@@ -1,13 +1,15 @@
 # 05 — Interactividad (JavaScript ligero)
 
 ## Alcance
-Solo tres comportamientos: **menú de navegación** (incluido el móvil), **tabs** y **modales**. Todo en JavaScript vanilla, sin dependencias. Cada comportamiento vive en `assets/js/components/` y se inicializa desde `assets/js/main.js`.
+Comportamientos de interfaz en JavaScript vanilla, sin dependencias: **menú de navegación** (incluido el móvil), **tabs**, **modales** y, como ampliación para las pantallas de acceso, **visibilidad y medidor visual de seguridad de contraseñas**. Cada comportamiento vive en `assets/js/components/` y se inicializa desde `assets/js/main.js`.
 
 Restricciones:
 - No hay lógica de negocio ni datos dinámicos.
 - No se usa `localStorage`.
 - Los componentes deben degradar bien: si JS falla, la página sigue siendo legible.
 - Cada módulo exporta una función `init()` y se inicializa solo si el elemento existe en la página.
+- La visibilidad de contraseña solo cambia el tipo del campo y actualiza `aria-pressed` y `aria-label`; no valida credenciales.
+- El medidor de registro es informativo y visual; estima tres niveles según longitud y tipos de caracteres, sin bloquear el formulario ni aplicar reglas de autenticación.
 
 ## Patrón de inicialización (`main.js`)
 
@@ -132,6 +134,12 @@ Usar el elemento nativo `<dialog>` con `showModal()` y `close()`. Reduce código
 | Confirmar cancelación de cita | 6 | "Cancelar cita" |
 | Confirmar eliminación de cuenta | 7 | "Eliminar cuenta" |
 | Ver documentos de solicitud | 11 | "Ver documentos" |
+
+### 5.4 Contraseñas en pantallas de acceso
+
+- `password-toggle.js` inicializa los botones `[data-password-toggle]`; cada botón apunta al campo mediante `data-target`. Al pulsarlo alterna entre `password` y `text`, actualiza `aria-pressed` y cambia el nombre accesible entre "Mostrar contraseña" y "Ocultar contraseña".
+- `password-strength.js` observa el campo marcado con `[data-password-strength-input]` y actualiza el texto, el nivel accesible y tres segmentos visuales. Los niveles son baja, media y alta; es un indicador orientativo, no una validación de seguridad real.
+- Ambos scripts usan scripts clásicos bajo `window.PetCare` para mantener compatibilidad con apertura mediante `file://`.
 
 ---
 

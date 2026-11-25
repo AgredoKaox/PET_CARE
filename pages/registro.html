@@ -1,54 +1,131 @@
 <!DOCTYPE html>
-<!-- PetCare — Crear cuenta | Versión 1.0 -->
+<!-- PetCare — Crear cuenta -->
 <html lang="es-CO">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Crear cuenta — PetCare</title>
   <link rel="stylesheet" href="../assets/css/main.css">
-  <script src="../assets/js/components/menu.js" defer></script>
-  <script src="../assets/js/components/tabs.js" defer></script>
-  <script src="../assets/js/components/modal.js" defer></script>
+  <script src="../assets/js/components/password-toggle.js" defer></script>
+  <script src="../assets/js/components/password-strength.js" defer></script>
   <script src="../assets/js/main.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <main id="contenido" class="hero hero--auth">
     <section class="auth-form" aria-labelledby="titulo-registro">
-      <a class="auth-form__brand" href="../index.html">PetCare</a>
-      <h1 id="titulo-registro" class="auth-form__title">Crear cuenta</h1>
-      <p class="auth-form__subtitle">Registra tus datos para comenzar.</p>
+      <header class="auth-form__header">
+        <a class="auth-form__brand" href="../index.html">
+          <img src="../assets/images/logo-petcare.svg" alt="PetCare, Salud Animal" width="180" height="48">
+        </a>
+        <h1 id="titulo-registro" class="auth-form__title">Crear Cuenta</h1>
+        <p class="auth-form__subtitle">Únete a PetCare y gestiona la salud de tus mascotas</p>
+      </header>
 
       <nav class="auth-form__tabs" aria-label="Acceso">
-        <a class="auth-form__tab" href="login.html">Iniciar sesión</a>
+        <a class="auth-form__tab" href="login.html">Iniciar Sesión</a>
         <a class="auth-form__tab auth-form__tab--active" href="registro.html" aria-current="page">Crear cuenta</a>
       </nav>
 
-      <form class="auth-form__form" action="#">
+      <form class="auth-form__form">
         <div class="auth-form__field">
-          <label class="auth-form__label" for="nombre">Nombre completo</label>
-          <input class="auth-form__input" id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre">
+          <label class="auth-form__label" for="nombre">Nombre completo <span class="auth-form__required" aria-hidden="true">*</span><span class="auth-form__visually-hidden">obligatorio</span></label>
+          <div class="auth-form__control">
+            <img class="auth-form__icon" src="../assets/images/icons/user.svg" alt="" aria-hidden="true" width="20" height="20">
+            <input class="auth-form__input" id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Ej. Juan Agredo" required>
+          </div>
         </div>
         <div class="auth-form__field">
-          <label class="auth-form__label" for="correo">Correo electrónico</label>
-          <input class="auth-form__input" id="correo" name="correo" type="email" autocomplete="email" placeholder="correo@ejemplo.com">
+          <label class="auth-form__label" for="correo">Correo electrónico <span class="auth-form__required" aria-hidden="true">*</span><span class="auth-form__visually-hidden">obligatorio</span></label>
+          <div class="auth-form__control">
+            <img class="auth-form__icon" src="../assets/images/icons/email.svg" alt="" aria-hidden="true" width="20" height="20">
+            <input class="auth-form__input" id="correo" name="correo" type="email" autocomplete="email" placeholder="usuario@petcare.com" required>
+          </div>
         </div>
         <div class="auth-form__field">
-          <label class="auth-form__label" for="contrasena">Contraseña</label>
-          <input class="auth-form__input" id="contrasena" name="contrasena" type="password" autocomplete="new-password">
-          <span class="auth-form__hint">Usa una contraseña segura.</span>
+          <label class="auth-form__label" for="documento">Número de documento <span class="auth-form__required" aria-hidden="true">*</span><span class="auth-form__visually-hidden">obligatorio</span></label>
+          <div class="auth-form__control auth-form__control--document">
+            <img class="auth-form__icon" src="../assets/images/icons/id-card.svg" alt="" aria-hidden="true" width="20" height="20">
+            <label class="auth-form__visually-hidden" for="tipo-documento">Tipo de documento</label>
+            <select class="auth-form__document-select" id="tipo-documento" name="tipo-documento" aria-label="Tipo de documento">
+              <option value="CC">CC</option>
+            </select>
+            <input class="auth-form__input" id="documento" name="documento" type="text" inputmode="numeric" autocomplete="off" placeholder="1002938475" required>
+          </div>
         </div>
-        <label class="auth-form__checkbox">
-          <input name="terminos" type="checkbox">
-          <span>Acepto los términos de servicio y la política de privacidad.</span>
-        </label>
-        <button class="button button--primary button--lg" type="submit">Crear cuenta</button>
+        <div class="auth-form__field">
+          <label class="auth-form__label" for="telefono">Teléfono de contacto <span class="auth-form__required" aria-hidden="true">*</span><span class="auth-form__visually-hidden">obligatorio</span></label>
+          <div class="auth-form__control">
+            <img class="auth-form__icon" src="../assets/images/icons/phone.svg" alt="" aria-hidden="true" width="20" height="20">
+            <input class="auth-form__input" id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="+57 300 123 4567" required>
+          </div>
+        </div>
+        <div class="auth-form__field">
+          <label class="auth-form__label" for="contrasena">Contraseña <span class="auth-form__required" aria-hidden="true">*</span><span class="auth-form__visually-hidden">obligatorio</span></label>
+          <div class="auth-form__control">
+            <img class="auth-form__icon" src="../assets/images/icons/lock.svg" alt="" aria-hidden="true" width="20" height="20">
+            <input class="auth-form__input" id="contrasena" name="contrasena" type="password" autocomplete="new-password" data-password-strength-input aria-describedby="nivel-seguridad" required>
+            <button class="auth-form__password-toggle" type="button" data-password-toggle data-target="contrasena" aria-controls="contrasena" aria-pressed="false" aria-label="Mostrar contraseña">
+              <img class="auth-form__toggle-icon" src="../assets/images/icons/eye.svg" alt="" aria-hidden="true" width="20" height="20">
+              <img class="auth-form__toggle-icon" src="../assets/images/icons/eye-off.svg" alt="" aria-hidden="true" width="20" height="20" hidden>
+            </button>
+          </div>
+          <div class="auth-form__strength" id="nivel-seguridad" data-password-strength data-level="medium" role="meter" aria-label="Seguridad de la contraseña" aria-valuemin="0" aria-valuemax="3" aria-valuenow="2" aria-valuetext="Seguridad Media">
+            <div class="auth-form__strength-header">
+              <span class="auth-form__strength-label">Seguridad: <span data-strength-label>Media</span></span>
+              <span class="auth-form__hint">Usa letras, números y símbolos</span>
+            </div>
+            <div class="auth-form__strength-track" aria-hidden="true">
+              <span class="auth-form__strength-segment"></span>
+              <span class="auth-form__strength-segment"></span>
+              <span class="auth-form__strength-segment"></span>
+            </div>
+          </div>
+        </div>
+        <div class="auth-form__field">
+          <label class="auth-form__label" for="confirmar-contrasena">Confirmar contraseña <span class="auth-form__required" aria-hidden="true">*</span><span class="auth-form__visually-hidden">obligatorio</span></label>
+          <div class="auth-form__control">
+            <img class="auth-form__icon" src="../assets/images/icons/lock.svg" alt="" aria-hidden="true" width="20" height="20">
+            <input class="auth-form__input" id="confirmar-contrasena" name="confirmar-contrasena" type="password" autocomplete="new-password" required>
+            <button class="auth-form__password-toggle" type="button" data-password-toggle data-target="confirmar-contrasena" aria-controls="confirmar-contrasena" aria-pressed="false" aria-label="Mostrar contraseña">
+              <img class="auth-form__toggle-icon" src="../assets/images/icons/eye.svg" alt="" aria-hidden="true" width="20" height="20">
+              <img class="auth-form__toggle-icon" src="../assets/images/icons/eye-off.svg" alt="" aria-hidden="true" width="20" height="20" hidden>
+            </button>
+          </div>
+        </div>
+        <fieldset class="auth-form__checkbox-group">
+          <legend class="auth-form__visually-hidden">Aceptación de documentos</legend>
+          <label class="auth-form__checkbox">
+            <input name="terminos" type="checkbox" checked required>
+            <span>Acepto los <a class="auth-form__link" href="#terminos">Términos y Condiciones</a> y la <a class="auth-form__link" href="#privacidad">Política de Privacidad</a>.</span>
+          </label>
+        </fieldset>
+        <button class="button button--primary button--lg auth-form__submit" type="button">Crear Cuenta</button>
       </form>
 
-      <div class="auth-form__footer">
-        <span>¿Ya tienes una cuenta? <a class="auth-form__link" href="login.html">Iniciar sesión</a></span>
+      <div class="auth-form__divider"><span>o regístrate con</span></div>
+      <div class="auth-form__social">
+        <button class="auth-form__social-button" type="button">
+          <img src="../assets/images/logo-google.svg" alt="" aria-hidden="true" width="20" height="20">
+          <span>Google</span>
+        </button>
+        <button class="auth-form__social-button" type="button">
+          <img src="../assets/images/logo-facebook.svg" alt="" aria-hidden="true" width="20" height="20">
+          <span>Facebook</span>
+        </button>
       </div>
+
+      <p class="auth-form__footer">¿Ya tienes cuenta? <a class="auth-form__link" href="login.html">Inicia sesión</a></p>
     </section>
   </main>
+  <footer class="footer footer--auth">
+    <nav class="footer__links" aria-label="Enlaces de ayuda">
+      <a class="footer__link" href="#privacidad">Política de Privacidad</a>
+      <span aria-hidden="true">·</span>
+      <a class="footer__link" href="#terminos">Términos de Servicio</a>
+      <span aria-hidden="true">·</span>
+      <a class="footer__link" href="#soporte">Soporte</a>
+    </nav>
+  </footer>
 </body>
 </html>

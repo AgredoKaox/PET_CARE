@@ -14,40 +14,58 @@
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <div class="dashboard"><aside class="sidebar" id="sidebar">
-  <a class="sidebar__brand" href="../index.html">PetCare</a>
-  <span class="sidebar__role-badge">Due?o de mascota</span>
-  <nav class="sidebar__nav" aria-label="Navegaci?n principal">
+  <a class="sidebar__brand" href="../index.html"><img src="../assets/images/logo-petcare.svg" alt="PetCare, Salud Animal" width="180" height="48"></a>
+  <span class="sidebar__role-badge">Dueño de mascota</span>
+  <nav class="sidebar__nav" aria-label="Navegación principal">
     <ul class="sidebar__list">
-      <li><a class="sidebar__link" href="dueno-dashboard.html"><span class="sidebar__icon" aria-hidden="true"></span>Dashboard</a></li>
-      <li><a class="sidebar__link" href="dueno-mascotas.html"><span class="sidebar__icon" aria-hidden="true"></span>Mis mascotas</a></li>
-      <li><a class="sidebar__link" href="dueno-calendario.html"><span class="sidebar__icon" aria-hidden="true"></span>Calendario de citas</a></li>
-      <li><a class="sidebar__link" href="dueno-configuracion.html"><span class="sidebar__icon" aria-hidden="true"></span>Configuraci?n</a></li>
-      <li><a class="sidebar__link sidebar__link--active" href="dueno-vacunas.html" aria-current="page"><span class="sidebar__icon" aria-hidden="true"></span>Vacunas</a></li>
-      <li><a class="sidebar__link" href="dueno-tratamientos.html"><span class="sidebar__icon" aria-hidden="true"></span>Tratamientos</a></li>
-      <li><a class="sidebar__link" href="dueno-notas.html"><span class="sidebar__icon" aria-hidden="true"></span>Notas y observaciones</a></li>
-      <li><a class="sidebar__link" href="dueno-alertas.html"><span class="sidebar__icon" aria-hidden="true"></span>Notificaciones</a></li>
-      <li><a class="sidebar__link" href="dueno-solicitud-vet.html"><span class="sidebar__icon" aria-hidden="true"></span>Solicitud para ser veterinario</a></li>
+      <li><a class="sidebar__link" href="dueno-dashboard.html"><img class="sidebar__icon" src="../assets/images/icons/dashboard.svg" alt="" aria-hidden="true">Dashboard</a></li>
+      <li><a class="sidebar__link" href="dueno-mascotas.html"><img class="sidebar__icon" src="../assets/images/icons/pets.svg" alt="" aria-hidden="true">Mis mascotas</a></li>
+      <li><a class="sidebar__link" href="dueno-calendario.html"><img class="sidebar__icon" src="../assets/images/icons/calendar.svg" alt="" aria-hidden="true">Calendario</a></li>
+      <li><a class="sidebar__link" href="dueno-alertas.html"><img class="sidebar__icon" src="../assets/images/icons/bell.svg" alt="" aria-hidden="true">Alertas</a></li>
+      <li><a class="sidebar__link" href="dueno-configuracion.html"><img class="sidebar__icon" src="../assets/images/icons/user.svg" alt="" aria-hidden="true">Perfil</a></li>
     </ul>
   </nav>
   <div class="sidebar__footer">
     <a class="button button--accent-teal" href="dueno-solicitud-vet.html">Solicitar ser veterinario</a>
-    <a class="button button--danger-soft" href="login.html">Cerrar sesi?n</a>
+    <a class="button button--danger-soft" href="login.html">Cerrar sesión</a>
   </div>
 </aside>
   <div class="dashboard__body">
-    <header class="header"><button class="header__menu-toggle button button--icon" type="button" aria-controls="sidebar" aria-expanded="false">Menú</button><nav class="header__breadcrumb" aria-label="Ubicación"><span class="header__crumb">Plataforma</span><span aria-hidden="true">&nbsp;/&nbsp;</span><span class="header__crumb header__crumb--current">Vacunas</span></nav><div class="header__role-switch" role="group" aria-label="Cambiar rol"><button class="header__role header__role--active" type="button" aria-pressed="true">Dueño</button><button class="header__role" type="button" aria-pressed="false">Veterinario</button><button class="header__role" type="button" aria-pressed="false">Admin</button></div><div class="header__user"><span class="header__avatar" aria-hidden="true">JA</span><span class="header__user-name">Juan Agredo</span></div></header>
+    <header class="header"><button class="header__menu-toggle button button--icon" type="button" aria-controls="sidebar" aria-expanded="false">Menú</button><nav class="header__breadcrumb" aria-label="Ubicación"><span class="header__crumb">Plataforma</span><span aria-hidden="true">&nbsp;/&nbsp;</span><span class="header__crumb header__crumb--current">Vacunas</span></nav><nav class="header__role-switch" aria-label="Cambiar rol">
+          <a class="header__role header__role--active" href="dueno-dashboard.html" aria-current="page">Dueño</a>
+          <a class="header__role" href="vet-dashboard.html">Veterinario</a>
+          <a class="header__role" href="admin-dashboard.html">Admin</a>
+        </nav><div class="header__user"><span class="header__avatar" aria-hidden="true">JA</span><span class="header__user-name">Juan Agredo</span></div></header>
     <main id="contenido" class="dashboard__content">
-      <section class="hero" aria-labelledby="titulo-vacunas"><div class="hero__content"><h1 id="titulo-vacunas" class="hero__title">Vacunas</h1><p class="hero__subtitle">Calendario de vacunación de Luna.</p></div><div class="hero__actions"><button class="button button--primary" type="button">Registrar vacuna</button></div></section>
-      <article class="card card--panel">
-        <header class="card__header"><h2 class="card__title">Historial de vacunación</h2></header>
-        <div class="table__wrapper">
-          <table class="table">
-            <caption>Vacunas registradas para Luna</caption>
-            <thead><tr><th scope="col">Vacuna</th><th scope="col">Aplicación</th><th scope="col">Próxima dosis</th><th scope="col">Estado</th></tr></thead>
-            <tbody><tr><th scope="row">Séxtuple canina</th><td>15/03/2026</td><td>15/03/2027</td><td><span class="badge badge--success">Al día</span></td></tr><tr class="table__row--highlight"><th scope="row">Rabia</th><td>20/06/2025</td><td>20/06/2026</td><td><span class="badge badge--warning">Pendiente</span></td></tr></tbody>
-          </table>
-        </div>
-      </article>
+      <section class="hero" aria-labelledby="titulo-vacunas">
+        <div class="hero__content"><h1 id="titulo-vacunas" class="hero__title">Calendario de Vacunas</h1><p class="hero__subtitle">Controla las inmunizaciones de tus mascotas y mantén sus dosis vigentes.</p></div>
+        <div class="hero__actions"><button class="button button--primary" type="button">Registrar vacuna</button></div>
+      </section>
+      <section class="screen-columns" aria-label="Calendario y próximas vacunas">
+        <article class="card card--panel screen-columns__main">
+          <div class="screen-toolbar">
+            <h2 class="card__title">Vacunas registradas</h2>
+            <label class="screen-form__field"><span class="screen-form__label">Mascota</span><select class="screen-form__select"><option>Todas las mascotas</option><option>Luna</option><option>Tobias</option><option>Pelusa</option></select></label>
+          </div>
+          <div class="table__wrapper">
+            <table class="table">
+              <caption>Vacunas aplicadas y próximas dosis para tus mascotas</caption>
+              <thead><tr><th scope="col">Mascota</th><th scope="col">Vacuna</th><th scope="col">Fecha aplicación</th><th scope="col">Próxima dosis</th><th scope="col">Lote</th><th scope="col">Veterinario</th><th scope="col">Estado</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Luna</th><td>Antirrábica</td><td>15 ago 2026</td><td>15 ago 2027</td><td>LOT-2451</td><td>Dr. Ramírez</td><td><span class="badge badge--success">Al día</span></td></tr>
+                <tr><th scope="row">Tobias</th><td>Triple felina</td><td>10 jul 2026</td><td>10 jul 2027</td><td>LOT-1892</td><td>Dra. Gómez</td><td><span class="badge badge--success">Al día</span></td></tr>
+                <tr class="table__row--highlight"><th scope="row">Pelusa</th><td>Mixomatosis</td><td>01 mar 2026</td><td>01 mar 2027</td><td>LOT-3384</td><td>Dr. Ramírez</td><td><span class="badge badge--warning">Próxima</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+        <aside class="card card--panel screen-columns__aside" aria-labelledby="proximas-vacunas">
+          <h2 class="card__title" id="proximas-vacunas">Próximas vacunas</h2>
+          <article class="screen-summary screen-summary--warning"><span class="screen-summary__label">Pelusa · Mixomatosis</span><strong>Vence el 01 mar 2027</strong></article>
+          <article class="screen-summary screen-summary--warning"><span class="screen-summary__label">Tobias · Triple felina</span><strong>Refuerzo el 10 jul 2027</strong></article>
+          <article class="screen-summary screen-summary--warning"><span class="screen-summary__label">Luna · Antirrábica</span><strong>Refuerzo el 15 ago 2027</strong></article>
+        </aside>
+      </section>
     </main>
     <footer class="footer"><nav class="footer__links" aria-label="Enlaces legales y de soporte"><a class="footer__link" href="#">Política de privacidad</a><a class="footer__link" href="#">Términos de servicio</a><a class="footer__link" href="#">Soporte</a></nav></footer>
   </div></div>

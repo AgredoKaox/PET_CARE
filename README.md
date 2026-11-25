@@ -6,7 +6,7 @@ PetCare es un prototipo front-end estático de una plataforma de gestión de sal
 Muestra paneles para propietarios, veterinarios y administradores, junto con mascotas, citas, vacunas, tratamientos, notas y catálogos.
 Incluye 17 pantallas navegables, maquetadas con HTML5, CSS3 y JavaScript vanilla.
 No contiene backend, autenticación real, persistencia ni lógica de negocio.
-Las interacciones se limitan al menú móvil, pestañas y modales.
+Las interacciones incluyen menú móvil, pestañas, modales y controles visuales de contraseña en las pantallas de acceso.
 
 ## Tecnologías
 
@@ -110,12 +110,8 @@ El nombre Carlos Ruiz y otras mascotas presentes en referencias del diseño no s
 
 ## Historial de commits
 
-El historial se mantiene pendiente de generar con los cambios de las fases.
-El commit propuesto para la estructura inicial es:
-
-`chore(estructura): crear esqueleto de carpetas y html semántico base`
-
-Los commits posteriores siguen la convención Conventional Commits documentada en `specs/07-flujo-git-commits.md`.
+Los cambios se registran con la convención Conventional Commits documentada en `specs/07-flujo-git-commits.md`.
+Consulta el historial del repositorio con `git log --oneline`.
 
 ## Autor y contexto académico
 
