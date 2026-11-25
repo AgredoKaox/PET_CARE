@@ -232,6 +232,19 @@
   font-size: var(--font-size-xs);
 }
 
+.auth-form__error {
+  color: var(--color-danger);
+  font-size: var(--font-size-xs);
+}
+
+.auth-form__error[hidden] {
+  display: none;
+}
+
+.auth-form__input--error {
+  border-color: var(--color-danger);
+}
+
 .auth-form__strength {
   display: flex;
   flex-direction: column;

@@ -8,6 +8,10 @@ body {
   overflow-x: hidden;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 .skip-link {
   position: absolute;
   top: var(--space-4);

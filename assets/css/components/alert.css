@@ -9,6 +9,10 @@
   border-radius: var(--radius-md);
 }
 
+.alert[hidden] {
+  display: none;
+}
+
 .alert__dot {
   flex: 0 0 var(--space-2);
   width: var(--space-2);
@@ -51,4 +55,8 @@
 
 .alert--info .alert__dot {
   background-color: var(--color-info);
+}
+
+.alert--read {
+  opacity: 0.65;
 }

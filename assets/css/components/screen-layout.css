@@ -5,6 +5,36 @@
   min-width: 0;
 }
 
+.screen-feedback {
+  position: fixed;
+  z-index: 1000;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  left: var(--space-4);
+  width: fit-content;
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-surface);
+  background-color: var(--color-primary-700);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.screen-feedback[hidden] {
+  display: none;
+}
+
+.screen-stack__item--removed,
+.table__row--removed {
+  opacity: 0.55;
+}
+
+.screen-form--submitted {
+  background-color: var(--color-primary-50);
+  border-radius: var(--radius-md);
+}
+
 .species-layout {
   flex-wrap: wrap;
 }
