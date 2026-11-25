@@ -7,6 +7,8 @@
   <title>Iniciar sesión — PetCare</title>
   <link rel="stylesheet" href="../assets/css/main.css">
   <script src="../assets/js/components/password-toggle.js" defer></script>
+  <script src="../assets/js/components/auth-flows.js" defer></script>
+  <script src="../assets/js/components/prototype-actions.js" defer></script>
   <script src="../assets/js/main.js" defer></script>
 </head>
 <body>
@@ -26,23 +28,24 @@
         <a class="auth-form__tab" href="registro.html">Crear cuenta</a>
       </nav>
 
-      <div class="alert alert--success auth-form__notice" role="status">
+      <div class="alert alert--success auth-form__notice" role="status" data-auth-success>
         <span class="alert__dot" aria-hidden="true"></span>
         <p class="alert__description">Ingresa tus credenciales para acceder a tu panel de control.</p>
       </div>
 
-      <form class="auth-form__form">
+      <form class="auth-form__form" data-auth-form="inicio-sesion" data-redirect="dueno-dashboard.html" novalidate>
         <div class="auth-form__field">
           <label class="auth-form__label" for="correo">Email o documento de identidad <span class="auth-form__required" aria-hidden="true">*</span><span class="auth-form__visually-hidden">obligatorio</span></label>
           <div class="auth-form__control">
             <img class="auth-form__icon" src="../assets/images/icons/email.svg" alt="" aria-hidden="true" width="20" height="20">
             <input class="auth-form__input" id="correo" name="correo" type="text" autocomplete="username" placeholder="usuario@petcare.com" required>
           </div>
+          <span class="auth-form__error" data-field-error="correo" hidden></span>
         </div>
         <div class="auth-form__field">
           <div class="auth-form__password-heading">
             <label class="auth-form__label" for="contrasena">Contraseña <span class="auth-form__required" aria-hidden="true">*</span><span class="auth-form__visually-hidden">obligatorio</span></label>
-            <a class="auth-form__link" href="#recuperar-contrasena">¿Olvidaste tu contraseña?</a>
+            <a class="auth-form__link" href="recuperar-contrasena.html">¿Olvidaste tu contraseña?</a>
           </div>
           <div class="auth-form__control">
             <img class="auth-form__icon" src="../assets/images/icons/lock.svg" alt="" aria-hidden="true" width="20" height="20">
@@ -52,6 +55,7 @@
               <img class="auth-form__toggle-icon" src="../assets/images/icons/eye-off.svg" alt="" aria-hidden="true" width="20" height="20" hidden>
             </button>
           </div>
+          <span class="auth-form__error" data-field-error="contrasena" hidden></span>
         </div>
         <fieldset class="auth-form__checkbox-group">
           <legend class="auth-form__visually-hidden">Preferencias de acceso</legend>
@@ -64,10 +68,10 @@
           <legend class="auth-form__visually-hidden">Aceptación de documentos</legend>
           <label class="auth-form__checkbox">
             <input name="terminos" type="checkbox">
-            <span>Acepto los <a class="auth-form__link" href="#terminos">Términos y Condiciones</a> y la <a class="auth-form__link" href="#privacidad">Política de Privacidad</a>.</span>
+            <span>Acepto los <a class="auth-form__link" href="informacion.html#terminos">Términos y Condiciones</a> y la <a class="auth-form__link" href="informacion.html#privacidad">Política de Privacidad</a>.</span>
           </label>
         </fieldset>
-        <button class="button button--primary button--lg auth-form__submit" type="button">Iniciar Sesión</button>
+        <button class="button button--primary button--lg auth-form__submit" type="submit">Iniciar Sesión</button>
       </form>
 
       <p class="auth-form__footer">¿No tienes cuenta? <a class="auth-form__link" href="registro.html">Regístrate ahora</a></p>
@@ -75,11 +79,11 @@
   </main>
   <footer class="footer footer--auth">
     <nav class="footer__links" aria-label="Enlaces de ayuda">
-      <a class="footer__link" href="#privacidad">Política de Privacidad</a>
+      <a class="footer__link" href="informacion.html#privacidad">Política de Privacidad</a>
       <span aria-hidden="true">·</span>
-      <a class="footer__link" href="#terminos">Términos de Servicio</a>
+      <a class="footer__link" href="informacion.html#terminos">Términos de Servicio</a>
       <span aria-hidden="true">·</span>
-      <a class="footer__link" href="#soporte">Soporte</a>
+      <a class="footer__link" href="informacion.html#soporte">Soporte</a>
     </nav>
   </footer>
 </body>

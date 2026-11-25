@@ -9,6 +9,7 @@
   <script src="../assets/js/components/menu.js" defer></script>
   <script src="../assets/js/components/tabs.js" defer></script>
   <script src="../assets/js/components/modal.js" defer></script>
+  <script src="../assets/js/components/prototype-actions.js" defer></script>
   <script src="../assets/js/main.js" defer></script>
 </head>
 <body>
@@ -37,7 +38,7 @@
           <a class="header__role" href="admin-dashboard.html">Admin</a>
         </nav><div class="header__user"><span class="header__avatar" aria-hidden="true">JA</span><span class="header__user-name">Juan Agredo</span></div></header>
     <main id="contenido" class="dashboard__content">
-      <section class="hero" aria-labelledby="titulo-notas"><div class="hero__content"><h1 id="titulo-notas" class="hero__title">Notas y Observaciones</h1><p class="hero__subtitle">Registra eventos cotidianos, cambios en el comportamiento o síntomas inusuales de tus mascotas.</p></div><div class="hero__actions"><button class="button button--primary" type="button">Nueva nota</button></div></section>
+      <section class="hero" aria-labelledby="titulo-notas"><div class="hero__content"><h1 id="titulo-notas" class="hero__title">Notas y Observaciones</h1><p class="hero__subtitle">Registra eventos cotidianos, cambios en el comportamiento o síntomas inusuales de tus mascotas.</p></div><div class="hero__actions"><button class="button button--primary" type="button" data-modal-open="modal-nueva-nota">Nueva nota</button></div></section>
       <section class="screen-columns" aria-label="Notas y filtros">
         <div class="screen-columns__main">
           <article class="screen-note"><header class="screen-note__header"><span class="badge badge--warning">Comportamiento</span><time datetime="2026-09-04">4 sep 2026</time></header><h2 class="screen-stack__title">Tobias juguetón</h2><p class="screen-note__text">Ha estado muy activo corriendo con su juguete nuevo. No presenta estornudos ni secreciones. Ánimo inmejorable.</p><p class="screen-note__pet">Tobias (Persa)</p></article>
@@ -52,7 +53,19 @@
         </aside>
       </section>
     </main>
-    <footer class="footer"><nav class="footer__links" aria-label="Enlaces legales y de soporte"><a class="footer__link" href="#">Política de privacidad</a><a class="footer__link" href="#">Términos de servicio</a><a class="footer__link" href="#">Soporte</a></nav></footer>
+    <footer class="footer"><nav class="footer__links" aria-label="Enlaces legales y de soporte"><a class="footer__link" href="informacion.html#privacidad">Política de privacidad</a><a class="footer__link" href="informacion.html#terminos">Términos de servicio</a><a class="footer__link" href="informacion.html#soporte">Soporte</a></nav></footer>
   </div></div>
+  <div class="modal modal--sheet" id="modal-nueva-nota" role="dialog" aria-modal="true" aria-labelledby="titulo-modal-nota" hidden>
+    <div class="modal__dialog">
+      <header class="modal__header"><h2 class="modal__title" id="titulo-modal-nota">Nueva nota</h2><button class="modal__close" type="button" aria-label="Cerrar" data-modal-close>Cerrar</button></header>
+      <form class="screen-form modal__body" data-success-message="Nota registrada solo en esta demostración; no se guardaron datos permanentes.">
+        <label class="screen-form__field"><span class="screen-form__label">Mascota</span><select class="screen-form__select" name="mascota" required><option value="">Selecciona una mascota</option><option>Luna</option><option>Tobias</option><option>Pelusa</option></select></label>
+        <label class="screen-form__field"><span class="screen-form__label">Título</span><input class="screen-form__input" name="titulo" type="text" required></label>
+        <label class="screen-form__field"><span class="screen-form__label">Categoría</span><select class="screen-form__select" name="categoria" required><option value="">Selecciona una categoría</option><option>Salud</option><option>Comportamiento</option><option>Alimentación</option><option>Urgente</option></select></label>
+        <label class="screen-form__field screen-form__field--full"><span class="screen-form__label">Observación</span><textarea class="screen-form__textarea" name="observacion" required></textarea></label>
+        <footer class="modal__footer screen-form__field--full"><button class="button button--secondary" type="button" data-modal-close>Cancelar</button><button class="button button--primary" type="submit">Guardar nota</button></footer>
+      </form>
+    </div>
+  </div>
 </body>
 </html>

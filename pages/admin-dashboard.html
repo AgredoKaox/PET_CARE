@@ -9,6 +9,7 @@
   <script src="../assets/js/components/menu.js" defer></script>
   <script src="../assets/js/components/tabs.js" defer></script>
   <script src="../assets/js/components/modal.js" defer></script>
+  <script src="../assets/js/components/prototype-actions.js" defer></script>
   <script src="../assets/js/main.js" defer></script>
 </head>
 <body>
@@ -48,8 +49,8 @@
         <section class="screen-columns" aria-label="Solicitudes y actividad del sistema">
           <article class="card card--panel screen-columns__main"><header class="card__header"><h2 class="card__title">Solicitudes de veterinario</h2><span class="badge badge--warning">2 pendientes</span></header>
             <div class="screen-stack">
-              <article class="screen-stack__item"><div class="screen-stack__content"><h3 class="screen-stack__title">Dr. Felipe Gómez</h3><p class="screen-stack__meta">Fisioterapia veterinaria · Hace 2 horas</p><a class="footer__link" href="dueno-solicitud-vet.html">Ver documentos</a></div><div class="screen-stack__actions"><button class="button button--danger-soft button--sm" type="button">Rechazar</button><button class="button button--primary button--sm" type="button">Aprobar</button></div></article>
-              <article class="screen-stack__item"><div class="screen-stack__content"><h3 class="screen-stack__title">Dra. Elena Rostova</h3><p class="screen-stack__meta">Cardiología · Clínica VetExpress · Ayer, 4:15 p. m.</p><a class="footer__link" href="dueno-solicitud-vet.html">Ver documentos</a></div><div class="screen-stack__actions"><button class="button button--danger-soft button--sm" type="button">Rechazar</button><button class="button button--primary button--sm" type="button">Aprobar</button></div></article>
+              <article class="screen-stack__item"><div class="screen-stack__content"><h3 class="screen-stack__title">Dr. Felipe Gómez</h3><p class="screen-stack__meta">Fisioterapia veterinaria · Hace 2 horas</p><a class="footer__link" href="dueno-solicitud-vet.html">Ver documentos</a></div><div class="screen-stack__actions"><button class="button button--danger-soft button--sm" type="button" data-action="estado-solicitud" data-status="rechazada">Rechazar</button><button class="button button--primary button--sm" type="button" data-action="estado-solicitud" data-status="aprobada">Aprobar</button></div></article>
+              <article class="screen-stack__item"><div class="screen-stack__content"><h3 class="screen-stack__title">Dra. Elena Rostova</h3><p class="screen-stack__meta">Cardiología · Clínica VetExpress · Ayer, 4:15 p. m.</p><a class="footer__link" href="dueno-solicitud-vet.html">Ver documentos</a></div><div class="screen-stack__actions"><button class="button button--danger-soft button--sm" type="button" data-action="estado-solicitud" data-status="rechazada">Rechazar</button><button class="button button--primary button--sm" type="button" data-action="estado-solicitud" data-status="aprobada">Aprobar</button></div></article>
             </div>
           </article>
           <aside class="card card--panel screen-columns__aside"><h2 class="card__title">Actividades recientes del sistema</h2><div class="screen-stack">
@@ -59,7 +60,7 @@
           </div></aside>
         </section>
       </main>
-      <footer class="footer"><nav class="footer__links" aria-label="Enlaces legales y de soporte"><a class="footer__link" href="#">Política de privacidad</a><a class="footer__link" href="#">Términos de servicio</a><a class="footer__link" href="#">Soporte</a></nav></footer>
+      <footer class="footer"><nav class="footer__links" aria-label="Enlaces legales y de soporte"><a class="footer__link" href="informacion.html#privacidad">Política de privacidad</a><a class="footer__link" href="informacion.html#terminos">Términos de servicio</a><a class="footer__link" href="informacion.html#soporte">Soporte</a></nav></footer>
     </div>
   </div>
 </body>

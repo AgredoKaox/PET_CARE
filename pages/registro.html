@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="../assets/css/main.css">
   <script src="../assets/js/components/password-toggle.js" defer></script>
   <script src="../assets/js/components/password-strength.js" defer></script>
+  <script src="../assets/js/components/auth-flows.js" defer></script>
+  <script src="../assets/js/components/prototype-actions.js" defer></script>
   <script src="../assets/js/main.js" defer></script>
 </head>
 <body>
@@ -27,13 +29,14 @@
         <a class="auth-form__tab auth-form__tab--active" href="registro.html" aria-current="page">Crear cuenta</a>
       </nav>
 
-      <form class="auth-form__form">
+      <form class="auth-form__form" data-auth-form="registro" data-redirect="login.html?registro=exitoso" novalidate>
         <div class="auth-form__field">
           <label class="auth-form__label" for="nombre">Nombre completo <span class="auth-form__required" aria-hidden="true">*</span><span class="auth-form__visually-hidden">obligatorio</span></label>
           <div class="auth-form__control">
             <img class="auth-form__icon" src="../assets/images/icons/user.svg" alt="" aria-hidden="true" width="20" height="20">
             <input class="auth-form__input" id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Ej. Juan Agredo" required>
           </div>
+          <span class="auth-form__error" data-field-error="nombre" hidden></span>
         </div>
         <div class="auth-form__field">
           <label class="auth-form__label" for="correo">Correo electrónico <span class="auth-form__required" aria-hidden="true">*</span><span class="auth-form__visually-hidden">obligatorio</span></label>
@@ -41,6 +44,7 @@
             <img class="auth-form__icon" src="../assets/images/icons/email.svg" alt="" aria-hidden="true" width="20" height="20">
             <input class="auth-form__input" id="correo" name="correo" type="email" autocomplete="email" placeholder="usuario@petcare.com" required>
           </div>
+          <span class="auth-form__error" data-field-error="correo" hidden></span>
         </div>
         <div class="auth-form__field">
           <label class="auth-form__label" for="documento">Número de documento <span class="auth-form__required" aria-hidden="true">*</span><span class="auth-form__visually-hidden">obligatorio</span></label>
@@ -52,6 +56,7 @@
             </select>
             <input class="auth-form__input" id="documento" name="documento" type="text" inputmode="numeric" autocomplete="off" placeholder="1002938475" required>
           </div>
+          <span class="auth-form__error" data-field-error="documento" hidden></span>
         </div>
         <div class="auth-form__field">
           <label class="auth-form__label" for="telefono">Teléfono de contacto <span class="auth-form__required" aria-hidden="true">*</span><span class="auth-form__visually-hidden">obligatorio</span></label>
@@ -59,17 +64,19 @@
             <img class="auth-form__icon" src="../assets/images/icons/phone.svg" alt="" aria-hidden="true" width="20" height="20">
             <input class="auth-form__input" id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="+57 300 123 4567" required>
           </div>
+          <span class="auth-form__error" data-field-error="telefono" hidden></span>
         </div>
         <div class="auth-form__field">
           <label class="auth-form__label" for="contrasena">Contraseña <span class="auth-form__required" aria-hidden="true">*</span><span class="auth-form__visually-hidden">obligatorio</span></label>
           <div class="auth-form__control">
             <img class="auth-form__icon" src="../assets/images/icons/lock.svg" alt="" aria-hidden="true" width="20" height="20">
-            <input class="auth-form__input" id="contrasena" name="contrasena" type="password" autocomplete="new-password" data-password-strength-input aria-describedby="nivel-seguridad" required>
+            <input class="auth-form__input" id="contrasena" name="contrasena" type="password" autocomplete="new-password" data-password-strength-input aria-describedby="nivel-seguridad error-contrasena" required>
             <button class="auth-form__password-toggle" type="button" data-password-toggle data-target="contrasena" aria-controls="contrasena" aria-pressed="false" aria-label="Mostrar contraseña">
               <img class="auth-form__toggle-icon" src="../assets/images/icons/eye.svg" alt="" aria-hidden="true" width="20" height="20">
               <img class="auth-form__toggle-icon" src="../assets/images/icons/eye-off.svg" alt="" aria-hidden="true" width="20" height="20" hidden>
             </button>
           </div>
+          <span class="auth-form__error" id="error-contrasena" data-field-error="contrasena" hidden></span>
           <div class="auth-form__strength" id="nivel-seguridad" data-password-strength data-level="medium" role="meter" aria-label="Seguridad de la contraseña" aria-valuemin="0" aria-valuemax="3" aria-valuenow="2" aria-valuetext="Seguridad Media">
             <div class="auth-form__strength-header">
               <span class="auth-form__strength-label">Seguridad: <span data-strength-label>Media</span></span>
@@ -92,15 +99,17 @@
               <img class="auth-form__toggle-icon" src="../assets/images/icons/eye-off.svg" alt="" aria-hidden="true" width="20" height="20" hidden>
             </button>
           </div>
+          <span class="auth-form__error" data-field-error="confirmar-contrasena" hidden></span>
         </div>
         <fieldset class="auth-form__checkbox-group">
           <legend class="auth-form__visually-hidden">Aceptación de documentos</legend>
           <label class="auth-form__checkbox">
             <input name="terminos" type="checkbox" checked required>
-            <span>Acepto los <a class="auth-form__link" href="#terminos">Términos y Condiciones</a> y la <a class="auth-form__link" href="#privacidad">Política de Privacidad</a>.</span>
+            <span>Acepto los <a class="auth-form__link" href="informacion.html#terminos">Términos y Condiciones</a> y la <a class="auth-form__link" href="informacion.html#privacidad">Política de Privacidad</a>.</span>
           </label>
+          <span class="auth-form__error" data-field-error="terminos" hidden></span>
         </fieldset>
-        <button class="button button--primary button--lg auth-form__submit" type="button">Crear Cuenta</button>
+        <button class="button button--primary button--lg auth-form__submit" type="submit">Crear Cuenta</button>
       </form>
 
       <div class="auth-form__divider"><span>o regístrate con</span></div>
@@ -120,11 +129,11 @@
   </main>
   <footer class="footer footer--auth">
     <nav class="footer__links" aria-label="Enlaces de ayuda">
-      <a class="footer__link" href="#privacidad">Política de Privacidad</a>
+      <a class="footer__link" href="informacion.html#privacidad">Política de Privacidad</a>
       <span aria-hidden="true">·</span>
-      <a class="footer__link" href="#terminos">Términos de Servicio</a>
+      <a class="footer__link" href="informacion.html#terminos">Términos de Servicio</a>
       <span aria-hidden="true">·</span>
-      <a class="footer__link" href="#soporte">Soporte</a>
+      <a class="footer__link" href="informacion.html#soporte">Soporte</a>
     </nav>
   </footer>
 </body>

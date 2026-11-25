@@ -9,6 +9,7 @@
   <script src="../assets/js/components/menu.js" defer></script>
   <script src="../assets/js/components/tabs.js" defer></script>
   <script src="../assets/js/components/modal.js" defer></script>
+  <script src="../assets/js/components/prototype-actions.js" defer></script>
   <script src="../assets/js/main.js" defer></script>
 </head>
 <body>
@@ -66,14 +67,14 @@
           <article class="card card--panel screen-columns__main">
             <header class="calendar__toolbar">
               <div class="calendar__month">
-                <button class="button button--secondary button--sm" type="button" aria-label="Mes anterior">‹</button>
+                <button class="button button--secondary button--sm" type="button" data-action="cambiar-mes" data-month-offset="-1" aria-label="Mes anterior">‹</button>
                 <h2 class="card__title">Septiembre 2026</h2>
-                <button class="button button--secondary button--sm" type="button" aria-label="Mes siguiente">›</button>
+                <button class="button button--secondary button--sm" type="button" data-action="cambiar-mes" data-month-offset="1" aria-label="Mes siguiente">›</button>
               </div>
               <div class="calendar__controls" role="group" aria-label="Vista del calendario">
-                <button class="button button--secondary button--sm" type="button">Mes</button>
-                <button class="button button--primary button--sm" type="button" aria-pressed="true">Semana</button>
-                <button class="button button--secondary button--sm" type="button">Día</button>
+                <button class="button button--secondary button--sm" type="button" data-action="seleccionar-vista-calendario" aria-pressed="false">Mes</button>
+                <button class="button button--primary button--sm" type="button" data-action="seleccionar-vista-calendario" aria-pressed="true">Semana</button>
+                <button class="button button--secondary button--sm" type="button" data-action="seleccionar-vista-calendario" aria-pressed="false">Día</button>
               </div>
             </header>
             <div class="calendar" role="table" aria-label="Citas de la semana del 7 al 13 de septiembre">
@@ -113,9 +114,9 @@
             </dl>
             <p class="screen-summary">Luna requiere el control anual de vacunas. Traer carnet físico si está disponible.</p>
             <div class="screen-stack__actions">
-              <button class="button button--primary" type="button">Completar cita</button>
-              <button class="button button--secondary" type="button">Reagendar</button>
-              <button class="button button--danger-soft" type="button">Cancelar cita</button>
+              <button class="button button--primary" type="button" data-action="completar-cita">Completar cita</button>
+              <button class="button button--secondary" type="button" data-action="reagendar-cita">Reagendar</button>
+              <button class="button button--danger-soft" type="button" data-action="confirmar-cancelacion-cita">Cancelar cita</button>
             </div>
           </aside>
         </section>
@@ -123,9 +124,9 @@
 
       <footer class="footer">
         <nav class="footer__links" aria-label="Enlaces legales y de soporte">
-          <a class="footer__link" href="#">Política de privacidad</a>
-          <a class="footer__link" href="#">Términos de servicio</a>
-          <a class="footer__link" href="#">Soporte</a>
+          <a class="footer__link" href="informacion.html#privacidad">Política de privacidad</a>
+          <a class="footer__link" href="informacion.html#terminos">Términos de servicio</a>
+          <a class="footer__link" href="informacion.html#soporte">Soporte</a>
         </nav>
       </footer>
     </div>
@@ -137,20 +138,20 @@
         <h2 class="modal__title" id="titulo-modal-cita">Nueva cita</h2>
         <button class="modal__close" type="button" aria-label="Cerrar" data-modal-close>Cerrar</button>
       </header>
-      <div class="modal__body">
-        <div class="auth-form__field">
-          <label class="auth-form__label" for="cita-mascota">Mascota</label>
-          <input class="auth-form__input" id="cita-mascota" name="cita-mascota" type="text" value="Luna" autocomplete="off">
-        </div>
-        <div class="auth-form__field">
-          <label class="auth-form__label" for="cita-fecha">Fecha</label>
-          <input class="auth-form__input" id="cita-fecha" name="cita-fecha" type="date" autocomplete="off">
-        </div>
-      </div>
-      <footer class="modal__footer">
-        <button class="button button--secondary" type="button" data-modal-close>Cancelar</button>
-        <button class="button button--primary" type="button">Guardar cita</button>
-      </footer>
+      <form class="modal__body screen-form" data-success-message="Cita registrada en esta demostración; no se guardaron datos.">
+        <label class="screen-form__field">
+          <span class="screen-form__label">Mascota</span>
+          <input class="screen-form__input" id="cita-mascota" name="cita-mascota" type="text" value="Luna" autocomplete="off" required>
+        </label>
+        <label class="screen-form__field">
+          <span class="screen-form__label">Fecha</span>
+          <input class="screen-form__input" id="cita-fecha" name="cita-fecha" type="date" autocomplete="off" required>
+        </label>
+        <footer class="modal__footer screen-form__field--full">
+          <button class="button button--secondary" type="button" data-modal-close>Cancelar</button>
+          <button class="button button--primary" type="submit">Guardar cita</button>
+        </footer>
+      </form>
     </div>
   </div>
 </body>

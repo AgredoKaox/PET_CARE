@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- PetCare — Recuperación demostrativa de contraseña -->
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recuperar contraseña — PetCare</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../assets/js/components/auth-flows.js" defer></script>
+  <script src="../assets/js/components/prototype-actions.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <main id="contenido" class="hero hero--auth">
+    <section class="auth-form" aria-labelledby="titulo-recuperacion">
+      <header class="auth-form__header">
+        <a class="auth-form__brand" href="../index.html">
+          <img src="../assets/images/logo-petcare.svg" alt="PetCare, Salud Animal" width="180" height="48">
+        </a>
+        <h1 class="auth-form__title" id="titulo-recuperacion">Recuperar contraseña</h1>
+        <p class="auth-form__subtitle">Ingresa el correo asociado a tu cuenta.</p>
+      </header>
+      <form class="auth-form__form" data-auth-form="recuperacion" novalidate>
+        <div class="auth-form__field">
+          <label class="auth-form__label" for="correo-recuperacion">Correo electrónico</label>
+          <input class="screen-form__input" id="correo-recuperacion" name="correo-recuperacion" type="email" autocomplete="email" required>
+          <span class="auth-form__error" data-field-error="correo-recuperacion" hidden></span>
+        </div>
+        <button class="button button--primary button--lg auth-form__submit" type="submit">Continuar</button>
+      </form>
+      <p class="alert alert--info auth-form__notice" data-recovery-success role="status" tabindex="-1" hidden>No se envió ningún correo: la recuperación requiere un servicio de backend que no está conectado en este prototipo.</p>
+      <p class="auth-form__footer"><a class="auth-form__link" href="login.html">Volver a iniciar sesión</a></p>
+    </section>
+  </main>
+</body>
+</html>

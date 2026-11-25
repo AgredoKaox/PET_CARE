@@ -9,6 +9,7 @@
   <script src="../assets/js/components/menu.js" defer></script>
   <script src="../assets/js/components/tabs.js" defer></script>
   <script src="../assets/js/components/modal.js" defer></script>
+  <script src="../assets/js/components/prototype-actions.js" defer></script>
   <script src="../assets/js/main.js" defer></script>
 </head>
 <body>
@@ -62,12 +63,13 @@
           <h2 class="card__title" id="detalle-tratamiento">Detalle del tratamiento</h2>
           <div class="pet-card__header"><span class="pet-card__avatar" aria-hidden="true">LU</span><div class="pet-card__identity"><h3 class="pet-card__name">Luna</h3><p class="pet-card__details">Suplemento nutricional</p></div></div>
           <dl class="screen-stack"><div><dt class="screen-summary__label">Indicación</dt><dd>Una dosis diaria con el desayuno.</dd></div><div><dt class="screen-summary__label">Fecha de inicio</dt><dd>20 de agosto de 2026</dd></div><div><dt class="screen-summary__label">Duración</dt><dd>30 días</dd></div><div><dt class="screen-summary__label">Veterinario</dt><dd>Dr. Alejandro Ramírez</dd></div></dl>
-          <p class="card__meta">Progreso: 18 de 30 días</p>
-          <div class="screen-stack__actions"><a class="button button--primary" href="vet-historial.html">Ver indicaciones</a><a class="button button--secondary" href="dueno-calendario.html">Agendar control</a></div>
+          <p class="card__meta" data-dose-progress>Progreso: 18 de 30 días</p>
+          <span class="badge badge--success" data-dose-status>Activo</span>
+          <div class="screen-stack__actions"><button class="button button--primary" type="button" data-action="marcar-dosis">Marcar dosis tomada</button><a class="button button--secondary" href="dueno-calendario.html">Agendar control</a></div>
         </aside>
       </section>
     </main>
-    <footer class="footer"><nav class="footer__links" aria-label="Enlaces legales y de soporte"><a class="footer__link" href="#">Política de privacidad</a><a class="footer__link" href="#">Términos de servicio</a><a class="footer__link" href="#">Soporte</a></nav></footer>
+    <footer class="footer"><nav class="footer__links" aria-label="Enlaces legales y de soporte"><a class="footer__link" href="informacion.html#privacidad">Política de privacidad</a><a class="footer__link" href="informacion.html#terminos">Términos de servicio</a><a class="footer__link" href="informacion.html#soporte">Soporte</a></nav></footer>
   </div></div>
 </body>
 </html>

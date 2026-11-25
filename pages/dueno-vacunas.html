@@ -9,6 +9,7 @@
   <script src="../assets/js/components/menu.js" defer></script>
   <script src="../assets/js/components/tabs.js" defer></script>
   <script src="../assets/js/components/modal.js" defer></script>
+  <script src="../assets/js/components/prototype-actions.js" defer></script>
   <script src="../assets/js/main.js" defer></script>
 </head>
 <body>
@@ -39,7 +40,7 @@
     <main id="contenido" class="dashboard__content">
       <section class="hero" aria-labelledby="titulo-vacunas">
         <div class="hero__content"><h1 id="titulo-vacunas" class="hero__title">Calendario de Vacunas</h1><p class="hero__subtitle">Controla las inmunizaciones de tus mascotas y mantén sus dosis vigentes.</p></div>
-        <div class="hero__actions"><button class="button button--primary" type="button">Registrar vacuna</button></div>
+        <div class="hero__actions"><button class="button button--primary" type="button" data-modal-open="modal-registrar-vacuna">Registrar vacuna</button></div>
       </section>
       <section class="screen-columns" aria-label="Calendario y próximas vacunas">
         <article class="card card--panel screen-columns__main">
@@ -67,7 +68,19 @@
         </aside>
       </section>
     </main>
-    <footer class="footer"><nav class="footer__links" aria-label="Enlaces legales y de soporte"><a class="footer__link" href="#">Política de privacidad</a><a class="footer__link" href="#">Términos de servicio</a><a class="footer__link" href="#">Soporte</a></nav></footer>
+    <footer class="footer"><nav class="footer__links" aria-label="Enlaces legales y de soporte"><a class="footer__link" href="informacion.html#privacidad">Política de privacidad</a><a class="footer__link" href="informacion.html#terminos">Términos de servicio</a><a class="footer__link" href="informacion.html#soporte">Soporte</a></nav></footer>
   </div></div>
+  <div class="modal modal--sheet" id="modal-registrar-vacuna" role="dialog" aria-modal="true" aria-labelledby="titulo-modal-vacuna" hidden>
+    <div class="modal__dialog">
+      <header class="modal__header"><h2 class="modal__title" id="titulo-modal-vacuna">Registrar vacuna</h2><button class="modal__close" type="button" aria-label="Cerrar" data-modal-close>Cerrar</button></header>
+      <form class="screen-form modal__body" data-success-message="Vacuna registrada solo en esta demostración; no se guardaron datos permanentes.">
+        <label class="screen-form__field"><span class="screen-form__label">Mascota</span><select class="screen-form__select" name="mascota" required><option value="">Selecciona una mascota</option><option>Luna</option><option>Tobias</option><option>Pelusa</option></select></label>
+        <label class="screen-form__field"><span class="screen-form__label">Nombre de la vacuna</span><input class="screen-form__input" name="vacuna" type="text" required></label>
+        <label class="screen-form__field"><span class="screen-form__label">Fecha de aplicación</span><input class="screen-form__input" name="fecha-aplicacion" type="date" required></label>
+        <label class="screen-form__field"><span class="screen-form__label">Próxima dosis</span><input class="screen-form__input" name="proxima-dosis" type="date"></label>
+        <footer class="modal__footer screen-form__field--full"><button class="button button--secondary" type="button" data-modal-close>Cancelar</button><button class="button button--primary" type="submit">Guardar vacuna</button></footer>
+      </form>
+    </div>
+  </div>
 </body>
 </html>

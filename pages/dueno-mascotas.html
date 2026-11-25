@@ -9,6 +9,7 @@
   <script src="../assets/js/components/menu.js" defer></script>
   <script src="../assets/js/components/tabs.js" defer></script>
   <script src="../assets/js/components/modal.js" defer></script>
+  <script src="../assets/js/components/prototype-actions.js" defer></script>
   <script src="../assets/js/main.js" defer></script>
 </head>
 <body>
@@ -58,7 +59,7 @@
             <p class="hero__subtitle">Consulta los perfiles y el estado de salud de tus mascotas.</p>
           </div>
           <div class="hero__actions">
-            <a class="button button--primary" href="#registrar-mascota">Agregar mascota</a>
+            <button class="button button--primary" type="button" data-modal-open="modal-agregar-mascota">Agregar mascota</button>
           </div>
         </section>
 
@@ -118,7 +119,7 @@
             </div>
             <div class="card__actions">
               <a class="button button--secondary button--sm" href="vet-historial.html">Ver expediente</a>
-              <a class="button button--secondary button--sm" href="#registrar-mascota">Editar perfil</a>
+              <button class="button button--secondary button--sm" type="button" data-modal-open="modal-agregar-mascota">Editar perfil</button>
             </div>
           </header>
           <div class="tabs" aria-label="Información de Luna">
@@ -155,33 +156,34 @@
           </div>
         </article>
 
-        <article class="card card--panel" id="registrar-mascota">
-          <header class="card__header">
-            <div>
-              <h2 class="card__title">Agregar nueva mascota</h2>
-              <p class="card__meta">Completa la información para crear su ficha de salud.</p>
-            </div>
-          </header>
-          <form class="screen-form" action="#">
-            <div class="screen-form__field"><label class="screen-form__label" for="nombre-mascota">Nombre de la mascota</label><input class="screen-form__input" id="nombre-mascota" name="nombre-mascota" type="text" placeholder="Ej. Luna" autocomplete="off"></div>
-            <div class="screen-form__field"><label class="screen-form__label" for="especie">Especie</label><select class="screen-form__select" id="especie" name="especie"><option value="">Selecciona una especie</option><option>Perro</option><option>Gato</option><option>Conejo</option></select></div>
-            <div class="screen-form__field"><label class="screen-form__label" for="raza">Raza</label><input class="screen-form__input" id="raza" name="raza" type="text" placeholder="Ej. Golden Retriever" autocomplete="off"></div>
-            <div class="screen-form__field"><label class="screen-form__label" for="fecha-nacimiento-mascota">Fecha de nacimiento</label><input class="screen-form__input" id="fecha-nacimiento-mascota" name="fecha-nacimiento-mascota" type="date"></div>
-            <div class="screen-form__field"><label class="screen-form__label" for="peso-mascota">Peso (kg)</label><input class="screen-form__input" id="peso-mascota" name="peso-mascota" type="number" min="0" step="0.1"></div>
-            <div class="screen-form__field"><label class="screen-form__label" for="sexo-mascota">Sexo</label><select class="screen-form__select" id="sexo-mascota" name="sexo-mascota"><option value="">Selecciona</option><option>Hembra</option><option>Macho</option></select></div>
-            <div class="screen-form__field screen-form__field--full"><span class="screen-form__label">Foto de la mascota</span><input class="screen-form__file-input" id="foto-mascota" name="foto-mascota" type="file" accept="image/*" aria-label="Seleccionar foto de la mascota"><label class="button button--secondary screen-upload__button" for="foto-mascota">Seleccionar foto</label></div>
-            <div class="screen-form__field screen-form__field--full"><button class="button button--primary" type="submit">Guardar mascota</button></div>
-          </form>
-        </article>
       </main>
 
       <footer class="footer">
         <nav class="footer__links" aria-label="Enlaces legales y de soporte">
-          <a class="footer__link" href="#">Política de privacidad</a>
-          <a class="footer__link" href="#">Términos de servicio</a>
-          <a class="footer__link" href="#">Soporte</a>
+          <a class="footer__link" href="informacion.html#privacidad">Política de privacidad</a>
+          <a class="footer__link" href="informacion.html#terminos">Términos de servicio</a>
+          <a class="footer__link" href="informacion.html#soporte">Soporte</a>
         </nav>
       </footer>
+    </div>
+  </div>
+
+  <div class="modal modal--sheet" id="modal-agregar-mascota" role="dialog" aria-modal="true" aria-labelledby="titulo-modal-mascota" hidden>
+    <div class="modal__dialog">
+      <header class="modal__header">
+        <div><h2 class="modal__title" id="titulo-modal-mascota">Agregar nueva mascota</h2><p class="card__meta">Completa la información para crear su ficha de salud.</p></div>
+        <button class="modal__close" type="button" aria-label="Cerrar" data-modal-close>Cerrar</button>
+      </header>
+      <form class="screen-form modal__body" data-success-message="Mascota registrada solo en esta demostración; no se guardaron datos permanentes.">
+        <div class="screen-form__field"><label class="screen-form__label" for="nombre-mascota">Nombre de la mascota</label><input class="screen-form__input" id="nombre-mascota" name="nombre-mascota" type="text" placeholder="Ej. Luna" autocomplete="off" required></div>
+        <div class="screen-form__field"><label class="screen-form__label" for="especie">Especie</label><select class="screen-form__select" id="especie" name="especie" required><option value="">Selecciona una especie</option><option>Perro</option><option>Gato</option><option>Conejo</option></select></div>
+        <div class="screen-form__field"><label class="screen-form__label" for="raza">Raza</label><input class="screen-form__input" id="raza" name="raza" type="text" placeholder="Ej. Golden Retriever" autocomplete="off"></div>
+        <div class="screen-form__field"><label class="screen-form__label" for="fecha-nacimiento-mascota">Fecha de nacimiento</label><input class="screen-form__input" id="fecha-nacimiento-mascota" name="fecha-nacimiento-mascota" type="date"></div>
+        <div class="screen-form__field"><label class="screen-form__label" for="peso-mascota">Peso (kg)</label><input class="screen-form__input" id="peso-mascota" name="peso-mascota" type="number" min="0" step="0.1"></div>
+        <div class="screen-form__field"><label class="screen-form__label" for="sexo-mascota">Sexo</label><select class="screen-form__select" id="sexo-mascota" name="sexo-mascota"><option value="">Selecciona</option><option>Hembra</option><option>Macho</option></select></div>
+        <div class="screen-form__field screen-form__field--full"><span class="screen-form__label">Foto de la mascota</span><input class="screen-form__file-input" id="foto-mascota" name="foto-mascota" type="file" accept="image/*" aria-label="Seleccionar foto de la mascota"><label class="button button--secondary screen-upload__button" for="foto-mascota">Seleccionar foto</label></div>
+        <footer class="modal__footer screen-form__field--full"><button class="button button--secondary" type="button" data-modal-close>Cancelar</button><button class="button button--primary" type="submit">Guardar mascota</button></footer>
+      </form>
     </div>
   </div>
 </body>

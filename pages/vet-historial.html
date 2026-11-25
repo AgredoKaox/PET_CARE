@@ -9,6 +9,7 @@
   <script src="../assets/js/components/menu.js" defer></script>
   <script src="../assets/js/components/tabs.js" defer></script>
   <script src="../assets/js/components/modal.js" defer></script>
+  <script src="../assets/js/components/prototype-actions.js" defer></script>
   <script src="../assets/js/main.js" defer></script>
 </head>
 <body>
@@ -68,11 +69,11 @@
           <section class="tabs__panel" id="panel-notas" role="tabpanel" aria-labelledby="tab-notas" hidden><article class="card card--panel"><h2 class="card__title">Notas clínicas</h2><p>Revisar apetito y actividad en el próximo control.</p></article></section>
         </section>
       </main>
-      <footer class="footer"><nav class="footer__links" aria-label="Enlaces legales y de soporte"><a class="footer__link" href="#">Política de privacidad</a><a class="footer__link" href="#">Términos de servicio</a><a class="footer__link" href="#">Soporte</a></nav></footer>
+      <footer class="footer"><nav class="footer__links" aria-label="Enlaces legales y de soporte"><a class="footer__link" href="informacion.html#privacidad">Política de privacidad</a><a class="footer__link" href="informacion.html#terminos">Términos de servicio</a><a class="footer__link" href="informacion.html#soporte">Soporte</a></nav></footer>
     </div>
     <div class="modal modal--sheet" id="modal-nueva-consulta" role="dialog" aria-modal="true" aria-labelledby="titulo-modal-consulta" hidden>
       <div class="modal__dialog"><header class="modal__header"><h2 class="modal__title" id="titulo-modal-consulta">Nueva consulta</h2><button class="modal__close" type="button" aria-label="Cerrar" data-modal-close>Cerrar</button></header>
-        <form class="modal__body screen-form" action="#"><label class="screen-form__field"><span class="screen-form__label">Mascota</span><select class="screen-form__select"><option>Luna</option><option>Tobias</option><option>Pelusa</option></select></label><label class="screen-form__field"><span class="screen-form__label">Motivo de consulta</span><input class="screen-form__input" type="text"></label><label class="screen-form__field screen-form__field--full"><span class="screen-form__label">Observaciones</span><textarea class="screen-form__textarea"></textarea></label><footer class="modal__footer"><button class="button button--secondary" type="button" data-modal-close>Cancelar</button><button class="button button--primary" type="submit">Guardar consulta</button></footer></form>
+        <form class="modal__body screen-form" data-success-message="Consulta registrada solo en esta demostración; no se guardaron datos permanentes."><label class="screen-form__field"><span class="screen-form__label">Mascota</span><select class="screen-form__select"><option>Luna</option><option>Tobias</option><option>Pelusa</option></select></label><label class="screen-form__field"><span class="screen-form__label">Motivo de consulta</span><input class="screen-form__input" type="text" required></label><label class="screen-form__field screen-form__field--full"><span class="screen-form__label">Observaciones</span><textarea class="screen-form__textarea"></textarea></label><footer class="modal__footer"><button class="button button--secondary" type="button" data-modal-close>Cancelar</button><button class="button button--primary" type="submit">Guardar consulta</button></footer></form>
       </div>
     </div>
   </div>
