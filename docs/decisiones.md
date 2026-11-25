@@ -12,7 +12,7 @@
 ## Interactividad
 
 - Se usarán scripts clásicos y objetos globales bajo `window.PetCare`.
-- Los comportamientos se organizarán en `assets/js/components/menu.js`, `tabs.js` y `modal.js`.
+- La navegación, pestañas, modales y acciones de demostración se organizan en `assets/js/components/menu.js`, `tabs.js`, `modal.js`, `auth-flows.js` y `prototype-actions.js`.
 - No se usarán módulos ES para permitir abrir el prototipo con doble clic.
 
 ## Responsive
@@ -25,8 +25,8 @@
 
 - Se reutilizan las 17 rutas existentes y se mantiene el HTML compartido duplicado en cada página; la navegación lateral se ajusta al rol y a las rutas disponibles.
 - [SUPUESTO] Las cifras y algunos registros que no se alcanzan a leer con claridad en el PDF se completan con datos demostrativos coherentes con el prototipo.
-- [PENDIENTE] Los formularios de gestión, filtros, acciones de aprobar/eliminar y opciones de calendario son visuales; no guardan información ni ejecutan operaciones porque el proyecto no tiene backend.
-- [PENDIENTE] Los enlaces legales y de soporte siguen sin destino hasta que se definan sus páginas.
+- Los formularios y acciones de gestión muestran validación y cambios visuales de demostración, pero no guardan datos; los filtros siguen siendo solo visuales y no consultan información.
+- Los enlaces legales y de soporte llevan a `pages/informacion.html`, donde se informa que el contenido aún está pendiente sin inventar términos legales.
 
 ## Datos de ejemplo
 
@@ -39,5 +39,10 @@
 - [SUPUESTO] La casilla de términos de registro inicia marcada para reproducir el estado que muestra el PDF; confirmar este comportamiento antes de usarlo en un producto real.
 - Los campos de contraseña permanecen vacíos aunque el PDF muestre caracteres enmascarados, para no incluir una contraseña ficticia en el documento o en el autocompletado.
 - [PENDIENTE] El PDF representa Google con un círculo y una X; en la interfaz se usa el logotipo oficial multicolor de Google hasta confirmar si la X era intencional.
-- [PENDIENTE] No hay páginas legales ni de soporte en el alcance actual; los enlaces de privacidad, términos y soporte son destinos de marcador y deberán conectarse cuando se definan sus contenidos.
-- [PENDIENTE] No existe pantalla de recuperación de contraseña en las 17 vistas; "¿Olvidaste tu contraseña?" conserva un destino de marcador hasta que se diseñe el flujo correspondiente.
+- [PENDIENTE] `pages/informacion.html` solo anuncia que los contenidos legales y de soporte están pendientes; no sustituye los documentos finales.
+- [PENDIENTE] `pages/recuperar-contrasena.html` es demostrativa: valida el correo, pero no envía instrucciones hasta integrar un backend.
+
+## Acciones demostrativas
+
+- Los formularios de gestión, las acciones sobre citas, dosis, notificaciones y solicitudes muestran cambios solo en la pantalla actual; el estado no persiste al recargar y no se usa `localStorage` ni `sessionStorage`.
+- La pantalla `pages/recuperar-contrasena.html` valida el correo, pero explica que no se envía un mensaje porque el prototipo no tiene backend.
